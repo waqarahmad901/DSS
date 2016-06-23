@@ -1,0 +1,354 @@
+﻿@model DSS_CIO.Models.Person
+@{
+    ViewBag.Title = "Employee Detial";
+    string name = Model.FName + " " + Model.LName;
+    bool isCandidate = Request["candidate"] != null;
+}
+<link href="~/Areas/Test/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Employee Detail</h3>
+    </div>
+
+</div>
+<div class="clearfix"></div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="row">
+
+        <div class="x_panel " style="background-color:lightblue">
+
+            <div class="x_content">
+                <div class="col-md-8 col-sm-8 col-xs-8">
+                    <br>
+                    <form class="form-horizontal form-label-left">
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">Name</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="@name">
+                            </div>
+                        </div>
+
+                        @*<div class="form-group">
+                                <label class="control-label col-md-2 col-sm-2 col-xs-2">Description</label>
+                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <textarea class="form-control" rows="3" value="aa" disabled="disabled">aaa</textarea>
+                                </div>
+                            </div>*@
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">Date Of Birth</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="@Model.DateOfBirth.Value.ToShortDateString()">
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">Gender</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="@Model.Gender">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">Employeement Status</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="@Model.EmploymentStatus">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">Contact</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="@Model.Contact">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">Address</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="@Model.AddressLine">
+                            </div>
+                        </div><div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">City</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="@Model.City">
+                            </div>
+                        </div><div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">Country</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="@Model.Country">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">Postal Code</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="@Model.PostalCode">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">Refernce 1</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="123">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">Refernce 2</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="123">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-2">Active</label>
+                            <div class="col-md-10 col-sm-10 col-xs-10">
+                                <input type="text" class="form-control" disabled="disabled" value="Active">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <img src="~/Areas/Test/images/logo3.jpg" style="height:470px;margin-top:24px" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (isCandidate)
+            {
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Salery Predection</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <table id="datatable122" class="table table-striped table-bordered" style="width:85%; margin: 0 auto">
+                            <thead>
+                                <tr>
+                                    <th>Salary 1</th>
+                                    <th>Salary 2</th>
+                                    <th>Salary 3</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Predicted Skills</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <table id="datatable1272" class="table table-striped table-bordered" style="width:85%; margin: 0 auto">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:800px">Skill</th>
+                                            <th>Performance grade</th>
+                                            <th>Efficiency grade</th>
+                                        </tr>
+                                    </thead>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+    }
+    else {
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Employee Attendence</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <table id="datatable1" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Checkin Time</th>
+                                    <th>Checkout Time</th>
+                                    <th>Total Time</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Employee Payroll</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <table id="datatable3" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Month</th>
+                                            <th>Total Shifts</th>
+                                            <th>Time Short</th>
+                                            <th>Basic Pay</th>
+
+                                            <th>Total Pay</th>
+                                            <th>Bouns</th>
+                                            <th>Total Paid</th>
+
+                                        </tr>
+                                    </thead>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    }
+    @if (isCandidate)
+            {
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Employee Certification</h2>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <table id="datatable11" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Durantion</th>
+                                    <th>Completion Status</th>
+                                    <th>Grade</th>
+
+                                    <th>Application Status</th>
+                                </tr>
+                            </thead>
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Employee Education</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <table id="datatable12" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Degree Name</th>
+                                            <th>Degree Type</th>
+                                            <th>Board_University</th>
+                                            <th>CGPA_Persentage</th>
+                                            <th>Awards</th>
+                                            <th>Completion Status</th>
+                                        </tr>
+                                    </thead>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Employee Relationship</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <table id="datatable13" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Relationship</th>
+                                        </tr>
+                                    </thead>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    }
+
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#datatable1').dataTable({
+            "ajax": "@Url.Action("GetProjectsByEmployeeId", "My",new {@id = @Model.CNIC.Trim()})"
+        });
+        $('#datatable3').dataTable({
+            "ajax": "@Url.Action("GetResourcesByEmployeeId", "My" ,new { @id = @Model.CNIC.Trim() })"
+        });
+
+        $('#datatable11').dataTable({
+            "ajax": "@Url.Action("GetCertificationByEmployeeId", "My" ,new { @id = @Model.CNIC.Trim() })"
+        });
+
+        $('#datatable12').dataTable({
+            "ajax": "@Url.Action("GetEducationByEmployeeId", "My" ,new { @id = @Model.CNIC.Trim() })"
+        });
+
+        $('#datatable13').dataTable({
+            "ajax": "@Url.Action("GetRelationshipByEmployeeId", "My" ,new { @id = @Model.CNIC.Trim() })"
+        });
+
+
+        $('#datatable122').dataTable({
+            "ajax": "@Url.Action("GetSaleryList", "My" ,new { @id = @Model.CNIC.Trim() })"
+        });
+
+        $('#datatable1272').dataTable({
+            "ajax": "@Url.Action("GetPredectionList", "My" ,new { @id = @Model.CNIC.Trim() })"
+        });
+    });
+</script>
+

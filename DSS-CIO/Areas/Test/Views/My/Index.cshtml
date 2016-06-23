@@ -1,0 +1,91 @@
+﻿@model DSSCIO.Areas.Test.Models.ProjectModel
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Areas/Test/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+        <div class="page-title">
+            <div class="title_left" style="text-align:center; width:100%">
+                <h3>Decision Support System</h3>
+            </div>
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                   
+                    <div class="x_content">
+
+                        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#tab_content0" id="alert-tab" role="tab" data-toggle="tab" aria-expanded="true">Alerts</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#tab_content1" id="projects-tab" role="tab" data-toggle="tab" aria-expanded="true">Projects</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#tab_content2" role="tab" id="employees-tab" data-toggle="tab" aria-expanded="false">Employees</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#tab_content3" role="tab" id="resources-tab" data-toggle="tab" aria-expanded="false">Resources</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#tab_content4" role="tab" id="finiances-tab" data-toggle="tab" aria-expanded="false">Finiances</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#tab_content5" role="tab" id="candidate-tab" data-toggle="tab" aria-expanded="false">Job Application</a>
+                                </li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade active in" id="tab_content0" aria-labelledby="alert-tab">
+
+                                    @{ Html.RenderPartial("_Alerts", Model);  }
+
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content1" aria-labelledby="projects-tab">
+
+                                    @{ Html.RenderPartial("_Project",Model);  }
+
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="employees-tab">
+                                    @{ Html.RenderPartial("_Employee", Model);  }
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="resources-tab">
+                                    @{ Html.RenderPartial("_Resources", Model);  }
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content4" aria-labelledby="finiances-tab">
+                                    @{ Html.RenderPartial("_Finance", Model);  }
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content5" aria-labelledby="candidate-tab">
+                                    @{ Html.RenderPartial("_Candidate", Model);  }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+<script src="~/Areas/Test/vendors/jszip/dist/jszip.min.js"></script>
+<script src="~/Areas/Test/vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="~/Areas/Test/vendors/pdfmake/build/vfs_fonts.js"></script>
+
+
+
+<script type="text/javascript">
+    var theme = {
+        color: [
+            '#26B99A', '#34495E', '#BDC3C7', '#3498DB',
+            '#9B59B6', '#8abb6f', '#759c6a', '#bfd3b7'
+        ]
+    };
+   
+</script>

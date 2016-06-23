@@ -1,0 +1,87 @@
+﻿@model  DSS_CIO.Models.FinanceTransaction
+@{
+    ViewBag.Title = "Employee Detial"; 
+}
+<link href="~/Areas/Test/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Employee Detail</h3>
+    </div>
+
+</div>
+<div class="clearfix"></div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+
+        <div class="x_content">
+            <br>
+            <form class="form-horizontal form-label-left">
+
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-2">Project Name</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" disabled="disabled" value="@Model.Project.Name">
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-2">Description</label>
+                        <div class="col-md-10 col-sm-10 col-xs-10">
+                            <textarea class="form-control" rows="3" value="aa" disabled="disabled">aaa</textarea>
+                        </div>
+                    </div>*@
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-2">Amount</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" disabled="disabled" value="@Model.Amount">
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-2">Sender Id</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" disabled="disabled" value="@Model.SenderIdentification">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-2">Receiver Id</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" disabled="disabled" value="@Model.ReceiverIdentification">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-2">Date</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" disabled="disabled" value="@Model.TransactionDate.ToShortDateString()">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-2">Transaction Type</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" disabled="disabled" value="@Model.TransactionType">
+                    </div>
+                </div> 
+
+            </form>
+        </div>
+    </div>
+
+    
+
+ 
+
+
+</div>
+
+

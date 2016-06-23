@@ -1,0 +1,182 @@
+﻿@model DSSCIO.Areas.Test.Models.ProjectModel
+
+<div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Project Resource Utilization</h2>
+           
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div id="echart_pie11" style="height:250px;"></div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Employee Resource Utilization</h2>
+             
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div id="echart_pie19" style="height:250px;"></div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Resource Condition</h2>
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <div id="echart_pie12" style="height:250px;"></div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            
+            <div class="x_content">
+                <table id="datatable25" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Model</th>
+                            <th>Make</th>
+                            <th>Price</th>
+                            <th>Status</th>
+
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $('#resources-tab').on('shown.bs.tab', function () {
+            if (!$.fn.DataTable.isDataTable('#datatable25')) {
+                $('#datatable25').dataTable({
+                    "ajax": "@Url.Action("GetResourceList", "My")"
+                });
+            }
+
+
+
+            var echartPie = echarts.init(document.getElementById('echart_pie11'), theme);
+
+            echartPie.setOption({
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    x: 'center',
+                    y: 'bottom',
+                    data: ['Utilized Resources', 'Unutlized Resource']
+                },
+
+                calculable: true,
+                series: [{
+                    name: 'Resource Utlization',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '48%'],
+                    data: [{
+                        value: @Model.Piechart4[0],
+                        name: 'Utilized Resources'
+                    }, {
+                        value: @Model.Piechart4[1],
+                        name: 'Unutlized Resource'
+                    }]
+                }]
+            });
+
+            var echartPie = echarts.init(document.getElementById('echart_pie19'), theme);
+
+            echartPie.setOption({
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    x: 'center',
+                    y: 'bottom',
+                    data: ['Utilized Resources', 'Unutlized Resource']
+                },
+
+                calculable: true,
+                series: [{
+                    name: 'Resource Utlization',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '48%'],
+                    data: [{
+                        value: @Model.Piechart5[0],
+                        name: 'Utilized Resources'
+                    }, {
+                        value: @Model.Piechart5[1],
+                        name: 'Unutlized Resource'
+                    }]
+                }]
+            });
+
+
+
+
+
+            var echartPie2 = echarts.init(document.getElementById('echart_pie12'), theme);
+
+            echartPie2.setOption({
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    x: 'center',
+                    y: 'bottom',
+                    data: ['New Resources', 'Good Condition Resources', 'Bad Condition Resources']
+                },
+
+                calculable: true,
+                series: [{
+                    name: 'Resource Condition',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '48%'],
+                    data: [{
+                        value: @Model.Piechart6[0],
+                        name: 'New Resources'
+                    }, {
+                        value: @Model.Piechart6[1],
+                        name: 'Good Condition Resources'
+                    }, {
+                        value: @Model.Piechart6[2],
+                        name: 'Bad Condition Resources'
+                    }]
+                }]
+            });
+        });
+    });
+</script>

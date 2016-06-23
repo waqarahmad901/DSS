@@ -1,0 +1,145 @@
+﻿@model DSS_CIO.Models.InanimateResource
+@{
+    ViewBag.Title = "Employee Detial";
+    
+}
+<link href="~/Areas/Test/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+<link href="~/Areas/Test/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Employee Detail</h3>
+    </div>
+
+</div>
+<div class="clearfix"></div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+         
+        <div class="x_content">
+            <br>
+            <form class="form-horizontal form-label-left">
+
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-2">Name</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" disabled="disabled" value="@Model.Name">
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                        <label class="control-label col-md-2 col-sm-2 col-xs-2">Description</label>
+                        <div class="col-md-10 col-sm-10 col-xs-10">
+                            <textarea class="form-control" rows="3" value="aa" disabled="disabled">aaa</textarea>
+                        </div>
+                    </div>*@
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-2">Model</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" disabled="disabled" value="@Model.Model">
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-2">Make</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" disabled="disabled" value="@Model.Make">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-2">Price</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" disabled="disabled" value="@Model.Price">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-md-2 col-sm-2 col-xs-2">Condition</label>
+                    <div class="col-md-10 col-sm-10 col-xs-10">
+                        <input type="text" class="form-control" disabled="disabled" value="@Model.Condition">
+                    </div>
+                </div>
+              
+
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Projects using resource</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table id="datatable29" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Project Name</th>
+                                <th>Status</th>
+                                <th>Assignment Date</th>
+                                <th>Expected Return Date</th>
+                                <th>Actual Return Date</th>
+                            </tr>
+                        </thead>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Employee using Resources</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table id="datatable30" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Status</th>
+                                <th>Assignment Date</th>
+                                <th>Expected Return Date</th>
+                                <th>Actual Return Date</th>
+                            </tr>
+                        </thead>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#datatable29').dataTable({
+            "ajax": "@Url.Action("GetProjectsByResourcesId", "My",new {@id = @Model.ResourceID})"
+        });
+        $('#datatable30').dataTable({
+            "ajax": "@Url.Action("GetEmployeeUsingResources", "My" ,new { @id = @Model.ResourceID })"
+        });
+    });
+</script>
+
