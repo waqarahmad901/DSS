@@ -1,0 +1,98 @@
+﻿@model DSS_CIO.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerFullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerFullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateofBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateofBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organization)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organization)
+        </dd>
+    </dl>
+    <h4>
+        Projects with @Model.CustomerFullName
+    </h4>
+    <table class="table">
+        <tr>
+          
+            <th>
+                Project Name    
+            </th>
+            <th>
+                Satisfaction Level
+            </th>
+ 
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.CustomerProjectMappings)
+        {
+            if (item.CustomerID == Model.CustomerCNIC)
+            {
+                <tr>
+                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Project.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SatisfactionLevel)
+                    </td>
+                    
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "CustomerProjectMapping", new { id = item.CustomerProjectId,customerid = Model.CustomerCNIC }, "") |
+                         @Html.ActionLink("Delete", "Delete", "CustomerProjectMapping", new { id = item.CustomerProjectId }, "")
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <p>
+        @Html.ActionLink("Add More Projects ", "Edit", "CustomerProjectMapping", new { id = 0, customerid = Model.CustomerCNIC }, "")
+    </p>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerCNIC.TrimEnd() }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

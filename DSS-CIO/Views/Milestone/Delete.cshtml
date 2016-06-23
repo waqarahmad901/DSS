@@ -1,0 +1,73 @@
+﻿@model DSS_CIO.Models.Milestone
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Milestone</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalDeliverables)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalDeliverables)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignmentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deadline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deadline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualSubmissionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualSubmissionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to Project", "Details", "Project", new { id = Model.ProjectID }, "")
+        </div>
+    }
+</div>

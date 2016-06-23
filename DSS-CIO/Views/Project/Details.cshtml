@@ -1,0 +1,307 @@
+﻿@model DSS_CIO.Models.Project
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Project</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PeopleCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PeopleCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LaunchDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LaunchDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EcpectedEndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EcpectedEndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualEndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualEndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompletionPercentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompletionPercentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalMilestones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalMilestones)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectStatus)
+        </dd>
+
+    </dl>
+    <h4>Milestones of @Model.Name</h4>
+    <table class="table">
+        <tr>
+            <th>
+                Milestone ID
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Total Deliverables
+            </th>
+            <th>
+                Project Name
+            </th>
+            <th>
+                Assignment Date
+            </th>
+            <th>
+                Deadline
+            </th>
+            <th>
+                Actual Submission
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Milestones)
+        {
+            if(Model.ProjectID == item.ProjectID)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MilestoneID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalDeliverables)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => item.AssignmentDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => item.Deadline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => item.ActualSubmissionDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Milestone", new { id = item.MilestoneID, projectid = Model.ProjectID }, "") |
+                    @Html.ActionLink("Details", "Details", "Milestone", new { id = item.MilestoneID, projectid = Model.ProjectID }, "") |
+                  
+                    @Html.ActionLink("Delete", "Delete", "Milestone", new { id = item.MilestoneID }, "")
+                </td>
+            </tr>
+        }
+            }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Add Milestone to Project " + Model.Name, "Edit", "Milestone", new { id = 0, projectid = Model.ProjectID }, "")
+</p>
+<h4>Employees Working on @Model.Name</h4>
+<table class="table">
+    <tr>
+        <th>
+            Project Employee ID
+        </th>
+        <th>
+            Project Name
+        </th>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Role
+        </th>
+        <th>
+            Appointment Date
+        </th>
+        <th>
+            Performance
+        </th>
+    </tr>
+
+    @foreach (var item in Model.ProjectEmployeeAssignments)
+    {
+        if(Model.ProjectID == item.ProjectID)
+        {    
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectEmployeeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.FName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Performance)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "ProjectEmployeeAssignment", new { id = item.ProjectEmployeeID, projectid = Model.ProjectID }, "") |
+           
+                @Html.ActionLink("Delete", "Delete", "ProjectEmployeeAssignment", new { id = item.ProjectEmployeeID }, "")
+            </td>
+        </tr>
+    }
+    }
+</table>
+<p>
+    @Html.ActionLink("Add New Employee to Project " + Model.Name, "Edit", "ProjectEmployeeAssignment", new { id = 0, projectid = Model.ProjectID }, "")
+</p>
+<h4>Resources in @Model.Name</h4>
+<table class="table">
+    <tr>
+        <th>
+            Resource Name
+        </th>
+        <th>
+            Assignment Date
+        </th>
+        <th>
+            Expected Return Date
+        </th>
+        <th>
+            Actual Return Date     
+        </th>
+        <th>
+            Status
+        </th>
+    </tr>
+
+    @foreach (var item in Model.ProjectResourceAssignments)
+    {
+        if(Model.ProjectID == item.ProjectID)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InanimateResource.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignmentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExpectedReturnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActualReturnDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "ProjectResourceAssignment", new { id = item.ProjectResourceID, projectid = Model.ProjectID }, "") |
+             
+                @Html.ActionLink("Delete", "Delete", "ProjectResourceAssignment", new { id = item.ProjectResourceID }, "")
+            </td>
+        </tr>
+    }
+    }
+</table>
+<p>
+    @Html.ActionLink("Add New Resource to Project " + Model.Name, "Edit", "ProjectResourceAssignment", new { id = 0, projectid = Model.ProjectID }, "")
+</p>
+<h4>Compliants in @Model.Name</h4>
+<table class="table">
+    <tr>
+        <th>
+            Milestone Name  
+        </th>
+        <th>
+            Task Name   
+        </th>
+        <th>
+            Customer Name
+        </th>
+        <th>
+            Complaint Category
+        </th>
+        <th>
+            Severity 
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Complaints)
+    {
+        if(Model.ProjectID == item.ProjectID)
+        { 
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Milestone.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deliverable.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.CustomerFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Severity)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Complaint", new { id = item.ComplaintID }, "") |
+                @Html.ActionLink("Details", "Details", "Complaint", new { id = item.ComplaintID }, "") |
+                @Html.ActionLink("Delete", "Delete", "Complaint", new { id = item.ComplaintID }, "")
+            </td>
+        </tr>
+    }
+    }
+</table>
+<p>
+    @Html.ActionLink("Add New Complaint to Project " + Model.Name, "Create", "Complaint")
+</p>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectID }) |
+    @Html.ActionLink("Back to Project List", "Index")
+</p>

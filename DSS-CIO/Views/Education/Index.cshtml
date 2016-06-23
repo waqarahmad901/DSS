@@ -1,0 +1,82 @@
+﻿@model IEnumerable<DSS_CIO.Models.Education>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DegreeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DegreeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Board_University)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CGPA_Percentage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Awards)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompletionStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Person.FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DegreeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DegreeType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Board_University)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CGPA_Percentage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Awards)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompletionStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Person.FName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EducationID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EducationID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EducationID })
+            </td>
+        </tr>
+    }
+
+</table>

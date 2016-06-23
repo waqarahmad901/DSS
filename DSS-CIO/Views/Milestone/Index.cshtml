@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DSS_CIO.Models.Milestone>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalDeliverables)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deadline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualSubmissionDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalDeliverables)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignmentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deadline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActualSubmissionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MilestoneID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MilestoneID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MilestoneID })
+            </td>
+        </tr>
+    }
+
+</table>

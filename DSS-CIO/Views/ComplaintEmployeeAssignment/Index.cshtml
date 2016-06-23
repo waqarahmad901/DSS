@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DSS_CIO.Models.ComplaintEmployeeAssignment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deadline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResolutionDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Complaint.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Person.FName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignmentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deadline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResolutionDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Complaint.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Person.FName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ComplaintAssignmentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ComplaintAssignmentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ComplaintAssignmentID })
+        </td>
+    </tr>
+}
+
+</table>

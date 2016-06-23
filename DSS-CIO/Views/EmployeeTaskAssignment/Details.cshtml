@@ -1,0 +1,66 @@
+﻿@model DSS_CIO.Models.EmployeeTaskAssignment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EmployeeTaskAssignment</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignmentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deadline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deadline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmissionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmissionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deliverable.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deliverable.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.FName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

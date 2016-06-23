@@ -1,0 +1,43 @@
+﻿<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+
+            <div class="x_content">
+                <table id="datatable12" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Severity</th>
+                            <th>Contact</th>
+                            <th>Milestone</th>
+                            <th>Project Name</th>
+                            <th>Task Name</th>
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+
+                $('#datatable12').dataTable({
+                    "ajax": "@Url.Action("GetComplaintList", "Complaint")"
+                });
+
+    });
+
+</script>

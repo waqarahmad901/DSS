@@ -1,0 +1,74 @@
+﻿@model DSS_CIO.Models.Education
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Education</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DegreeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DegreeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DegreeType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DegreeType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Board_University)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Board_University)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CGPA_Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CGPA_Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Awards)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Awards)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompletionStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompletionStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.FName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EducationID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

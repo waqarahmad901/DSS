@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DSS_CIO.Models.Health>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BMI)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EyeSight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Allergy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Disease)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OtherHealthIssue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Person.FName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BloodGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BMI)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EyeSight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Allergy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Disease)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OtherHealthIssue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Person.FName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.HealthID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.HealthID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.HealthID })
+        </td>
+    </tr>
+}
+
+</table>

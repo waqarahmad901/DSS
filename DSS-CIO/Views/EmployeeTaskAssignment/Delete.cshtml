@@ -1,0 +1,72 @@
+﻿@model DSS_CIO.Models.EmployeeTaskAssignment
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EmployeeTaskAssignment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignmentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deadline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deadline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubmissionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubmissionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deliverable.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deliverable.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.FName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

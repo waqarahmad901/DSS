@@ -1,0 +1,155 @@
+﻿@model DSS_CIO.Models.Deliverable
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Deliverable</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Version)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Version)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Milestone.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Milestone.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+
+    </dl>
+    <h4>Employees Working on @Model.Description</h4>
+    <table class="table">
+        <tr>
+            <th>
+                S.No
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Assigntment Date
+            </th>
+            <th>
+                Deadline
+            </th>
+            <th>
+                Submission Date
+            </th>
+        </tr>
+
+        @foreach (var item in Model.EmployeeTaskAssignments)
+        {
+            if (Model.TaskID == item.TaskID)
+            {
+                <tr>
+                    <td>
+                        @Html.Display("Serial")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.FName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AssignmentDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Deadline)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SubmissionDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "EmployeeTaskAssignment", new { id = item.ID }, "") |
+                        @Html.ActionLink("Details", "Details", "EmployeeTaskAssignment", new { id = item.ID }, "") |
+                        @Html.ActionLink("Delete", "Delete", "EmployeeTaskAssignment", new { id = item.ID }, "")
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <h4>Complaints in @Model.Description</h4>
+    <table class="table">
+        <tr>
+            <th>
+                Customer Name
+            </th>
+            <th>
+                Complaint Category
+            </th>
+            <th>
+                Severity
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Complaints)
+        {
+            if(Model.TaskID == item.TaskID)
+            { 
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.CustomerFullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelitem => item.Severity)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Complaint", new { id = item.ComplaintID }, "") |
+                    @Html.ActionLink("Details", "Details", "Complaint", new { id = item.ComplaintID }, "") |
+                    @Html.ActionLink("Delete", "Delete", "Complaint", new { id = item.ComplaintID }, "")
+                </td>
+            </tr>
+        }
+        }
+    </table>
+    <p>
+        @Html.ActionLink("Add New Complaint to " + Model.Description, "Create", "Complaint")
+    </p>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TaskID }) |
+@Html.ActionLink("Back to Milestone", "Details", "Milestone", new { id = Model.MilestoneID }, "")
+</p>

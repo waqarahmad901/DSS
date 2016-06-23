@@ -1,0 +1,58 @@
+﻿@model DSS_CIO.Models.ProjectEmployeeAssignment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProjectEmployeeAssignment</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Role)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Role)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppointmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppointmentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Performance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Performance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.FName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectEmployeeID }) |
+    @Html.ActionLink("Back to Project", "Details", "Project", new { id = Model.ProjectEmployeeID }, "")
+</p>

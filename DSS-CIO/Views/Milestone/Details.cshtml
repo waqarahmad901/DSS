@@ -1,0 +1,177 @@
+﻿@model DSS_CIO.Models.Milestone
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Milestone</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalDeliverables)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalDeliverables)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssignmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssignmentDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deadline)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deadline)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActualSubmissionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActualSubmissionDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+    </dl>
+    <table class="table">
+        <tr>
+            <th>
+                S.No
+            </th>
+            <th>
+                Deliverable Description
+            </th>
+            <th>
+                Assigned By
+            </th>
+            <th>
+                Version
+            </th>
+            <th>
+                ReviewedBy
+            </th>
+            <th>
+                Milestone Description
+            </th>
+            <th>
+                Project Name
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Deliverables)
+        {
+            if (Model.MilestoneID == item.MilestoneID && Model.ProjectID == item.ProjectID)
+            {
+                <tr>
+                    <td>
+                        @Html.Display("Serial")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AssignedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Version)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReviewedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Milestone.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Project.Name)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Deliverable", new { id = item.TaskID }, "") |
+                        @Html.ActionLink("Details", "Details", "Deliverable", new { id = item.TaskID }, "") |
+                        @Html.ActionLink("Delete", "Delete", "Deliverable", new { id = item.TaskID }, "")
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <p>
+        @Html.ActionLink("Add Deliverable", "Create", "Deliverable")
+    </p>
+    <h4>Compliants in @Model.Description</h4>
+    <table class="table">
+        <tr>
+            <th>
+                Task Name
+            </th>
+            <th>
+                Customer Name
+            </th>
+            <th>
+                Complaint Category
+            </th>
+            <th>
+                Severity
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Complaints)
+        {
+            if (Model.MilestoneID == item.MilestoneID)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Deliverable.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.CustomerFullName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelitem => item.Severity)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Complaint", new { id = item.ComplaintID }, "") |
+                        @Html.ActionLink("Details", "Details", "Complaint", new { id = item.ComplaintID }, "") |
+                        @Html.ActionLink("Delete", "Delete", "Complaint", new { id = item.ComplaintID }, "")
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <p>
+        @Html.ActionLink("Add New Complaint to Milestone " + Model.Description, "Create", "Complaint")
+    </p>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MilestoneID }) |
+    @Html.ActionLink("Back to Project", "Details", "Project", new { id = Model.ProjectID }, "") |
+</p>

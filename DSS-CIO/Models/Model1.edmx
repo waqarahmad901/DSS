@@ -1,0 +1,2379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DSS_CIO3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Certification">
+          <Key>
+            <PropertyRef Name="CertificationID" />
+          </Key>
+          <Property Name="CertificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Duration" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CompletionStatus" Type="varchar" MaxLength="15" />
+          <Property Name="Grade" Type="varchar" MaxLength="10" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="ApplicationStatus" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ComplaintEmployeeAssignment">
+          <Key>
+            <PropertyRef Name="ComplaintAssignmentID" />
+          </Key>
+          <Property Name="ComplaintAssignmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ComplaintID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="AssignmentDate" Type="date" Nullable="false" />
+          <Property Name="Deadline" Type="date" />
+          <Property Name="ResolutionDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Complaints">
+          <Key>
+            <PropertyRef Name="ComplaintID" />
+          </Key>
+          <Property Name="ComplaintID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="nchar" MaxLength="10" />
+          <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="MilestoneID" Type="int" />
+          <Property Name="TaskID" Type="int" />
+          <Property Name="CustomerID" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="Severity" Type="int" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerCNIC" />
+          </Key>
+          <Property Name="CustomerCNIC" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="CustomerFullName" Type="varchar" MaxLength="50" />
+          <Property Name="DateofBirth" Type="date" />
+          <Property Name="Contact" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="EmailAddress" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Organization" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CustomerProjectMapping">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="CustomerProjectId" />
+          </Key>
+          <Property Name="CustomerID" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="SatisfactionLevel" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerProjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deliverable">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="AssignedBy" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Version" Type="float" />
+          <Property Name="ReviewedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MilestoneID" Type="int" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="DepartmentHead" Type="nchar" MaxLength="13" />
+        </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="EducationID" />
+          </Key>
+          <Property Name="EducationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="DegreeName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DegreeType" Type="varchar" MaxLength="20" />
+          <Property Name="Board_University" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CGPA_Percentage" Type="float" Nullable="false" />
+          <Property Name="Awards" Type="varchar" MaxLength="200" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="CompletionStatus" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeePerformance">
+          <Key>
+            <PropertyRef Name="EmployeePerformanceID" />
+          </Key>
+          <Property Name="EmployeePerformanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeID" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="PerformanceGrade" Type="varchar(max)" />
+          <Property Name="EfficiencyGrade" Type="varchar(max)" />
+          <Property Name="SkillDomain" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="EmployeeResourceAssignment">
+          <Key>
+            <PropertyRef Name="EmployeeResourceID" />
+          </Key>
+          <Property Name="EmployeeResourceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeID" Type="nchar" MaxLength="13" />
+          <Property Name="ResourceID" Type="int" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="AssignmentDate" Type="date" Nullable="false" />
+          <Property Name="ExpectedReturnDate" Type="date" />
+          <Property Name="ActualReturnDate" Type="date" />
+        </EntityType>
+        <EntityType Name="EmployeeTaskAssignment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TaskID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="AssignmentDate" Type="date" Nullable="false" />
+          <Property Name="Deadline" Type="date" />
+          <Property Name="SubmissionDate" Type="date" />
+          <Property Name="Remarks" Type="varchar" MaxLength="50" />
+          <Property Name="TaskCategory" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FinanceTransactions">
+          <Key>
+            <PropertyRef Name="FinanceTransactionID" />
+          </Key>
+          <Property Name="FinanceTransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionType" Type="varchar" MaxLength="50" />
+          <Property Name="IdentificationDocumentNumber" Type="varchar" MaxLength="50" />
+          <Property Name="IdentificationDocumentType" Type="varchar" MaxLength="50" />
+          <Property Name="Amount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="SenderIdentification" Type="varchar" MaxLength="50" />
+          <Property Name="ReceiverIdentification" Type="varchar" MaxLength="50" />
+          <Property Name="TransactionDate" Type="date" Nullable="false" />
+          <Property Name="ProjectFinanceID" Type="int" />
+          <Property Name="ProjectID" Type="int" />
+          <Property Name="CustomerID" Type="nchar" MaxLength="13" />
+        </EntityType>
+        <EntityType Name="Health">
+          <Key>
+            <PropertyRef Name="HealthID" />
+          </Key>
+          <Property Name="HealthID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="nchar" MaxLength="13" />
+          <Property Name="BloodGroup" Type="varchar" MaxLength="20" />
+          <Property Name="BMI" Type="float" />
+          <Property Name="EyeSight" Type="int" />
+          <Property Name="Allergy" Type="varchar" MaxLength="50" />
+          <Property Name="Disease" Type="varchar" MaxLength="50" />
+          <Property Name="OtherHealthIssue" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InanimateResource">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+          </Key>
+          <Property Name="ResourceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Make" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="Condition" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="JobDescription">
+          <Key>
+            <PropertyRef Name="JobDescriptionID" />
+          </Key>
+          <Property Name="JobDescriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="Salary" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KNNData">
+          <Key>
+            <PropertyRef Name="CNIC" />
+          </Key>
+          <Property Name="CNIC" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="Age" Type="int" />
+          <Property Name="Gender" Type="varchar" MaxLength="20" />
+          <Property Name="JobDescription" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="DegreeName" Type="varchar" MaxLength="50" />
+          <Property Name="DegreeType" Type="varchar" MaxLength="50" />
+          <Property Name="BoardUniversity" Type="varchar" MaxLength="50" />
+          <Property Name="CGPA_Percentage" Type="float" />
+          <Property Name="Salary" Type="int" />
+          <Property Name="CertificationName" Type="varchar" MaxLength="50" />
+          <Property Name="CertificationGrade" Type="varchar" MaxLength="10" />
+          <Property Name="BMI" Type="float" />
+          <Property Name="Eyesight" Type="int" />
+          <Property Name="Allergy" Type="varchar" MaxLength="50" />
+          <Property Name="Disease" Type="varchar" MaxLength="50" />
+          <Property Name="Skill" Type="varchar(max)" />
+          <Property Name="Distance" Type="float" />
+        </EntityType>
+        <EntityType Name="Milestone">
+          <Key>
+            <PropertyRef Name="MilestoneID" />
+          </Key>
+          <Property Name="MilestoneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="400" Nullable="false" />
+          <Property Name="TotalDeliverables" Type="int" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="AssignmentDate" Type="date" Nullable="false" />
+          <Property Name="Deadline" Type="date" Nullable="false" />
+          <Property Name="ActualSubmissionDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="CNIC" />
+          </Key>
+          <Property Name="CNIC" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="FName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="EmploymentStatus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="JobDescriptionID" Type="int" />
+          <Property Name="Contact" Type="varchar" MaxLength="50" />
+          <Property Name="AddressLine" Type="varchar" MaxLength="500" />
+          <Property Name="Street" Type="varchar" MaxLength="300" />
+          <Property Name="City" Type="varchar" MaxLength="150" />
+          <Property Name="Country" Type="varchar" MaxLength="100" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="10" />
+          <Property Name="Allowances" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PersonRelationshipAssignment">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Person1ID" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="Person2ID" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="Relationship2" Type="varchar" MaxLength="30" />
+          <Property Name="Relationship" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PeopleCount" Type="int" />
+          <Property Name="LaunchDate" Type="date" Nullable="false" />
+          <Property Name="EcpectedEndDate" Type="date" Nullable="false" />
+          <Property Name="ActualEndDate" Type="date" />
+          <Property Name="CompletionPercentage" Type="int" />
+          <Property Name="TotalMilestones" Type="int" />
+          <Property Name="ProjectStatus" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProjectFinanceID" Type="int" />
+        </EntityType>
+        <EntityType Name="ProjectEmployeeAssignment">
+          <Key>
+            <PropertyRef Name="ProjectEmployeeID" />
+          </Key>
+          <Property Name="ProjectEmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="nchar" MaxLength="13" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="100" />
+          <Property Name="AppointmentDate" Type="date" />
+          <Property Name="Performance" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="ProjectFinance">
+          <Key>
+            <PropertyRef Name="ProjectFinanceID" />
+          </Key>
+          <Property Name="ProjectFinanceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectBidPrice" Type="int" />
+          <Property Name="ProjectEstimatedCost" Type="int" Nullable="false" />
+          <Property Name="ProjectResourcesAmount" Type="int" />
+          <Property Name="ProjectPaymentDeadline" Type="date" />
+        </EntityType>
+        <EntityType Name="ProjectResourceAssignment">
+          <Key>
+            <PropertyRef Name="ProjectResourceID" />
+          </Key>
+          <Property Name="ProjectResourceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+          <Property Name="ResourceID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="nchar" MaxLength="13" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="AssignmentDate" Type="date" Nullable="false" />
+          <Property Name="ExpectedReturnDate" Type="date" />
+          <Property Name="ActualReturnDate" Type="date" />
+        </EntityType>
+        <EntityType Name="SkillPrediction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Skill" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Performance" Type="varchar" MaxLength="50" />
+          <Property Name="Efficiency" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_ComplaintID_Complaint">
+          <End Role="Complaints" Type="Self.Complaints" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ComplaintEmployeeAssignment" Type="Self.ComplaintEmployeeAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Complaints">
+              <PropertyRef Name="ComplaintID" />
+            </Principal>
+            <Dependent Role="ComplaintEmployeeAssignment">
+              <PropertyRef Name="ComplaintID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompliantEmployeeID_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ComplaintEmployeeAssignment" Type="Self.ComplaintEmployeeAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="ComplaintEmployeeAssignment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_CustomerID">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Complaints" Type="Self.Complaints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerCNIC" />
+            </Principal>
+            <Dependent Role="Complaints">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerProjectMapping_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CustomerProjectMapping" Type="Self.CustomerProjectMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerCNIC" />
+            </Principal>
+            <Dependent Role="CustomerProjectMapping">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerProjectMapping_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CustomerProjectMapping" Type="Self.CustomerProjectMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="CustomerProjectMapping">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deliverable_MilestoneID">
+          <End Role="Milestone" Type="Self.Milestone" Multiplicity="1" />
+          <End Role="Deliverable" Type="Self.Deliverable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Milestone">
+              <PropertyRef Name="MilestoneID" />
+            </Principal>
+            <Dependent Role="Deliverable">
+              <PropertyRef Name="MilestoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeliverableProjectID_ProjectID">
+          <End Role="Project" Type="Self.Project" Multiplicity="1" />
+          <End Role="Deliverable" Type="Self.Deliverable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Deliverable">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentHead_PersonCNIC">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Department" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="DepartmentHead" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Education_PersonID">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Education" Type="Self.Education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="Education">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeePerformanceID_PersonCNIC">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeePerformance" Type="Self.EmployeePerformance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="EmployeePerformance">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeResourceAssignment_ResourceID">
+          <End Role="InanimateResource" Type="Self.InanimateResource" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeResourceAssignment" Type="Self.EmployeeResourceAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InanimateResource">
+              <PropertyRef Name="ResourceID" />
+            </Principal>
+            <Dependent Role="EmployeeResourceAssignment">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeResourceAssignmentEmployeeID_PersonCNIC">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeResourceAssignment" Type="Self.EmployeeResourceAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="EmployeeResourceAssignment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeTaskAssignment_EmployeeID">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeTaskAssignment" Type="Self.EmployeeTaskAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="EmployeeTaskAssignment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeTaskAssignment_Task">
+          <End Role="Deliverable" Type="Self.Deliverable" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeTaskAssignment" Type="Self.EmployeeTaskAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deliverable">
+              <PropertyRef Name="TaskID" />
+            </Principal>
+            <Dependent Role="EmployeeTaskAssignment">
+              <PropertyRef Name="TaskID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeTaskAssignmentProjectID_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeTaskAssignment" Type="Self.EmployeeTaskAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="EmployeeTaskAssignment">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FinanceTransactionsCustomerID_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FinanceTransactions" Type="Self.FinanceTransactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerCNIC" />
+            </Principal>
+            <Dependent Role="FinanceTransactions">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FinanceTransactionsProjectFianaceID_ProjectFinance">
+          <End Role="ProjectFinance" Type="Self.ProjectFinance" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FinanceTransactions" Type="Self.FinanceTransactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectFinance">
+              <PropertyRef Name="ProjectFinanceID" />
+            </Principal>
+            <Dependent Role="FinanceTransactions">
+              <PropertyRef Name="ProjectFinanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobDescriptionDepartmentID_DepartmentID">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="JobDescription" Type="Self.JobDescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="JobDescription">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobDesctiptionID_JobDescription">
+          <End Role="JobDescription" Type="Self.JobDescription" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobDescription">
+              <PropertyRef Name="JobDescriptionID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="JobDescriptionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KNNDataCNIC_PersonCNIC">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KNNData" Type="Self.KNNData" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="KNNData">
+              <PropertyRef Name="CNIC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MilestoneID_Milestone">
+          <End Role="Milestone" Type="Self.Milestone" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Complaints" Type="Self.Complaints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Milestone">
+              <PropertyRef Name="MilestoneID" />
+            </Principal>
+            <Dependent Role="Complaints">
+              <PropertyRef Name="MilestoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MilestoneProjectID_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1" />
+          <End Role="Milestone" Type="Self.Milestone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Milestone">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonID">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Certification" Type="Self.Certification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="Certification">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonRelationshipID_Person1ID">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PersonRelationshipAssignment" Type="Self.PersonRelationshipAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="PersonRelationshipAssignment">
+              <PropertyRef Name="Person1ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonRelationshipID_Person2ID">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonRelationshipAssignment" Type="Self.PersonRelationshipAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="PersonRelationshipAssignment">
+              <PropertyRef Name="Person2ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectEmployeeAssignmentEmployeeID_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectEmployeeAssignment" Type="Self.ProjectEmployeeAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="ProjectEmployeeAssignment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectEmployeeAssignmentProjectID_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectEmployeeAssignment" Type="Self.ProjectEmployeeAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ProjectEmployeeAssignment">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectFinanceID_ProjectFinance">
+          <End Role="ProjectFinance" Type="Self.ProjectFinance" Multiplicity="0..1" />
+          <End Role="Project" Type="Self.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectFinance">
+              <PropertyRef Name="ProjectFinanceID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="ProjectFinanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectID_FinanceTransactions">
+          <End Role="Project" Type="Self.Project" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FinanceTransactions" Type="Self.FinanceTransactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="FinanceTransactions">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectID_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Complaints" Type="Self.Complaints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Complaints">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectResourceAssignmentEmployeeID_ProjectID">
+          <End Role="Project" Type="Self.Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectResourceAssignment" Type="Self.ProjectResourceAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ProjectResourceAssignment">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectResourceAssignmentEmployeeID_ResourceID">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectResourceAssignment" Type="Self.ProjectResourceAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="ProjectResourceAssignment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectResourceAssignmentResourceID_InanimateResourceResourceID">
+          <End Role="InanimateResource" Type="Self.InanimateResource" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectResourceAssignment" Type="Self.ProjectResourceAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InanimateResource">
+              <PropertyRef Name="ResourceID" />
+            </Principal>
+            <Dependent Role="ProjectResourceAssignment">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskID_Task">
+          <End Role="Deliverable" Type="Self.Deliverable" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Complaints" Type="Self.Complaints" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deliverable">
+              <PropertyRef Name="TaskID" />
+            </Principal>
+            <Dependent Role="Complaints">
+              <PropertyRef Name="TaskID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="func_Split" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DelimitedString" Type="varchar" Mode="In" />
+          <Parameter Name="DelimitedString2" Type="varchar" Mode="In" />
+          <Parameter Name="DelimitedString3" Type="varchar" Mode="In" />
+          <Parameter Name="Delimiter" Type="varchar" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="ElementID" Type="int" Nullable="false" />
+                <Property Name="Element" Type="varchar" MaxLength="1000" />
+                <Property Name="Element2" Type="varchar" MaxLength="1000" />
+                <Property Name="Element3" Type="varchar" MaxLength="1000" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
+        <Function Name="KNNALGORITHM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CNIC" Type="nchar" Mode="In" />
+          <Parameter Name="salary1" Type="int" Mode="InOut" />
+          <Parameter Name="salary2" Type="int" Mode="InOut" />
+          <Parameter Name="salary3" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="KNNALGORITHMSKILL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CNIC" Type="nchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="DSS_CIO3ModelStoreContainer">
+          <EntitySet Name="Certification" EntityType="Self.Certification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ComplaintEmployeeAssignment" EntityType="Self.ComplaintEmployeeAssignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Complaints" EntityType="Self.Complaints" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerProjectMapping" EntityType="Self.CustomerProjectMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deliverable" EntityType="Self.Deliverable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Education" EntityType="Self.Education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeePerformance" EntityType="Self.EmployeePerformance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeResourceAssignment" EntityType="Self.EmployeeResourceAssignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeTaskAssignment" EntityType="Self.EmployeeTaskAssignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FinanceTransactions" EntityType="Self.FinanceTransactions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Health" EntityType="Self.Health" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InanimateResource" EntityType="Self.InanimateResource" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="JobDescription" EntityType="Self.JobDescription" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KNNData" EntityType="Self.KNNData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Milestone" EntityType="Self.Milestone" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonRelationshipAssignment" EntityType="Self.PersonRelationshipAssignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectEmployeeAssignment" EntityType="Self.ProjectEmployeeAssignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectFinance" EntityType="Self.ProjectFinance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectResourceAssignment" EntityType="Self.ProjectResourceAssignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SkillPrediction" EntityType="Self.SkillPrediction" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ComplaintID_Complaint" Association="Self.FK_ComplaintID_Complaint">
+            <End Role="Complaints" EntitySet="Complaints" />
+            <End Role="ComplaintEmployeeAssignment" EntitySet="ComplaintEmployeeAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompliantEmployeeID_Person" Association="Self.FK_CompliantEmployeeID_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="ComplaintEmployeeAssignment" EntitySet="ComplaintEmployeeAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_CustomerID" Association="Self.FK_Customer_CustomerID">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Complaints" EntitySet="Complaints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerProjectMapping_Customer" Association="Self.FK_CustomerProjectMapping_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="CustomerProjectMapping" EntitySet="CustomerProjectMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerProjectMapping_Project" Association="Self.FK_CustomerProjectMapping_Project">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="CustomerProjectMapping" EntitySet="CustomerProjectMapping" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deliverable_MilestoneID" Association="Self.FK_Deliverable_MilestoneID">
+            <End Role="Milestone" EntitySet="Milestone" />
+            <End Role="Deliverable" EntitySet="Deliverable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeliverableProjectID_ProjectID" Association="Self.FK_DeliverableProjectID_ProjectID">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="Deliverable" EntitySet="Deliverable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentHead_PersonCNIC" Association="Self.FK_DepartmentHead_PersonCNIC">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Department" EntitySet="Department" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Education_PersonID" Association="Self.FK_Education_PersonID">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Education" EntitySet="Education" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeePerformanceID_PersonCNIC" Association="Self.FK_EmployeePerformanceID_PersonCNIC">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="EmployeePerformance" EntitySet="EmployeePerformance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeResourceAssignment_ResourceID" Association="Self.FK_EmployeeResourceAssignment_ResourceID">
+            <End Role="InanimateResource" EntitySet="InanimateResource" />
+            <End Role="EmployeeResourceAssignment" EntitySet="EmployeeResourceAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeResourceAssignmentEmployeeID_PersonCNIC" Association="Self.FK_EmployeeResourceAssignmentEmployeeID_PersonCNIC">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="EmployeeResourceAssignment" EntitySet="EmployeeResourceAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeTaskAssignment_EmployeeID" Association="Self.FK_EmployeeTaskAssignment_EmployeeID">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="EmployeeTaskAssignment" EntitySet="EmployeeTaskAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeTaskAssignment_Task" Association="Self.FK_EmployeeTaskAssignment_Task">
+            <End Role="Deliverable" EntitySet="Deliverable" />
+            <End Role="EmployeeTaskAssignment" EntitySet="EmployeeTaskAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeTaskAssignmentProjectID_Project" Association="Self.FK_EmployeeTaskAssignmentProjectID_Project">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="EmployeeTaskAssignment" EntitySet="EmployeeTaskAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FinanceTransactionsCustomerID_Customer" Association="Self.FK_FinanceTransactionsCustomerID_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="FinanceTransactions" EntitySet="FinanceTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FinanceTransactionsProjectFianaceID_ProjectFinance" Association="Self.FK_FinanceTransactionsProjectFianaceID_ProjectFinance">
+            <End Role="ProjectFinance" EntitySet="ProjectFinance" />
+            <End Role="FinanceTransactions" EntitySet="FinanceTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobDescriptionDepartmentID_DepartmentID" Association="Self.FK_JobDescriptionDepartmentID_DepartmentID">
+            <End Role="Department" EntitySet="Department" />
+            <End Role="JobDescription" EntitySet="JobDescription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobDesctiptionID_JobDescription" Association="Self.FK_JobDesctiptionID_JobDescription">
+            <End Role="JobDescription" EntitySet="JobDescription" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KNNDataCNIC_PersonCNIC" Association="Self.FK_KNNDataCNIC_PersonCNIC">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="KNNData" EntitySet="KNNData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MilestoneID_Milestone" Association="Self.FK_MilestoneID_Milestone">
+            <End Role="Milestone" EntitySet="Milestone" />
+            <End Role="Complaints" EntitySet="Complaints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MilestoneProjectID_Project" Association="Self.FK_MilestoneProjectID_Project">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="Milestone" EntitySet="Milestone" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonID" Association="Self.FK_PersonID">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Certification" EntitySet="Certification" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonRelationshipID_Person1ID" Association="Self.FK_PersonRelationshipID_Person1ID">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonRelationshipAssignment" EntitySet="PersonRelationshipAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonRelationshipID_Person2ID" Association="Self.FK_PersonRelationshipID_Person2ID">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonRelationshipAssignment" EntitySet="PersonRelationshipAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectEmployeeAssignmentEmployeeID_Person" Association="Self.FK_ProjectEmployeeAssignmentEmployeeID_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="ProjectEmployeeAssignment" EntitySet="ProjectEmployeeAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectEmployeeAssignmentProjectID_Project" Association="Self.FK_ProjectEmployeeAssignmentProjectID_Project">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="ProjectEmployeeAssignment" EntitySet="ProjectEmployeeAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectFinanceID_ProjectFinance" Association="Self.FK_ProjectFinanceID_ProjectFinance">
+            <End Role="ProjectFinance" EntitySet="ProjectFinance" />
+            <End Role="Project" EntitySet="Project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectID_FinanceTransactions" Association="Self.FK_ProjectID_FinanceTransactions">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="FinanceTransactions" EntitySet="FinanceTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectID_Project" Association="Self.FK_ProjectID_Project">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="Complaints" EntitySet="Complaints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectResourceAssignmentEmployeeID_ProjectID" Association="Self.FK_ProjectResourceAssignmentEmployeeID_ProjectID">
+            <End Role="Project" EntitySet="Project" />
+            <End Role="ProjectResourceAssignment" EntitySet="ProjectResourceAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectResourceAssignmentEmployeeID_ResourceID" Association="Self.FK_ProjectResourceAssignmentEmployeeID_ResourceID">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="ProjectResourceAssignment" EntitySet="ProjectResourceAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectResourceAssignmentResourceID_InanimateResourceResourceID" Association="Self.FK_ProjectResourceAssignmentResourceID_InanimateResourceResourceID">
+            <End Role="InanimateResource" EntitySet="InanimateResource" />
+            <End Role="ProjectResourceAssignment" EntitySet="ProjectResourceAssignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskID_Task" Association="Self.FK_TaskID_Task">
+            <End Role="Deliverable" EntitySet="Deliverable" />
+            <End Role="Complaints" EntitySet="Complaints" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DSS_CIO3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <ComplexType Name="func_Split_Result">
+          <Property Name="ElementID" Type="Int32" Nullable="false" />
+          <Property Name="Element" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Element2" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Element3" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </ComplexType>
+        <EntityType Name="Certification">
+          <Key>
+            <PropertyRef Name="CertificationID" />
+          </Key>
+          <Property Name="CertificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Duration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CompletionStatus" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Grade" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ApplicationStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_PersonID" FromRole="Certification" ToRole="Person" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="ComplaintEmployeeAssignment">
+          <Key>
+            <PropertyRef Name="ComplaintAssignmentID" />
+          </Key>
+          <Property Name="ComplaintAssignmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ComplaintID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AssignmentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Deadline" Type="DateTime" Precision="0" />
+          <Property Name="ResolutionDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Complaint" Relationship="Self.FK_ComplaintID_Complaint" FromRole="ComplaintEmployeeAssignment" ToRole="Complaints" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_CompliantEmployeeID_Person" FromRole="ComplaintEmployeeAssignment" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Complaint">
+          <Key>
+            <PropertyRef Name="ComplaintID" />
+          </Key>
+          <Property Name="ComplaintID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="MilestoneID" Type="Int32" />
+          <Property Name="TaskID" Type="Int32" />
+          <Property Name="CustomerID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Severity" Type="Int32" />
+          <NavigationProperty Name="ComplaintEmployeeAssignments" Relationship="Self.FK_ComplaintID_Complaint" FromRole="Complaints" ToRole="ComplaintEmployeeAssignment" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_Customer_CustomerID" FromRole="Complaints" ToRole="Customer" />
+          <NavigationProperty Name="Milestone" Relationship="Self.FK_MilestoneID_Milestone" FromRole="Complaints" ToRole="Milestone" />
+          <NavigationProperty Name="Project" Relationship="Self.FK_ProjectID_Project" FromRole="Complaints" ToRole="Project" />
+          <NavigationProperty Name="Deliverable" Relationship="Self.FK_TaskID_Task" FromRole="Complaints" ToRole="Deliverable" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustomerCNIC" />
+          </Key>
+          <Property Name="CustomerCNIC" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CustomerFullName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateofBirth" Type="DateTime" Precision="0" />
+          <Property Name="Contact" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Organization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Complaints" Relationship="Self.FK_Customer_CustomerID" FromRole="Customer" ToRole="Complaints" />
+          <NavigationProperty Name="CustomerProjectMappings" Relationship="Self.FK_CustomerProjectMapping_Customer" FromRole="Customer" ToRole="CustomerProjectMapping" />
+          <NavigationProperty Name="FinanceTransactions" Relationship="Self.FK_FinanceTransactionsCustomerID_Customer" FromRole="Customer" ToRole="FinanceTransactions" />
+        </EntityType>
+        <EntityType Name="CustomerProjectMapping">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="ProjectID" />
+            <PropertyRef Name="CustomerProjectId" />
+          </Key>
+          <Property Name="CustomerID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="SatisfactionLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerProjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_CustomerProjectMapping_Customer" FromRole="CustomerProjectMapping" ToRole="Customer" />
+          <NavigationProperty Name="Project" Relationship="Self.FK_CustomerProjectMapping_Project" FromRole="CustomerProjectMapping" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="Deliverable">
+          <Key>
+            <PropertyRef Name="TaskID" />
+          </Key>
+          <Property Name="TaskID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AssignedBy" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Version" Type="Double" />
+          <Property Name="ReviewedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MilestoneID" Type="Int32" Nullable="false" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Complaints" Relationship="Self.FK_TaskID_Task" FromRole="Deliverable" ToRole="Complaints" />
+          <NavigationProperty Name="Milestone" Relationship="Self.FK_Deliverable_MilestoneID" FromRole="Deliverable" ToRole="Milestone" />
+          <NavigationProperty Name="Project" Relationship="Self.FK_DeliverableProjectID_ProjectID" FromRole="Deliverable" ToRole="Project" />
+          <NavigationProperty Name="EmployeeTaskAssignments" Relationship="Self.FK_EmployeeTaskAssignment_Task" FromRole="Deliverable" ToRole="EmployeeTaskAssignment" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DepartmentHead" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_DepartmentHead_PersonCNIC" FromRole="Department" ToRole="Person" />
+          <NavigationProperty Name="JobDescriptions" Relationship="Self.FK_JobDescriptionDepartmentID_DepartmentID" FromRole="Department" ToRole="JobDescription" />
+        </EntityType>
+        <EntityType Name="Education">
+          <Key>
+            <PropertyRef Name="EducationID" />
+          </Key>
+          <Property Name="EducationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="DegreeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DegreeType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Board_University" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CGPA_Percentage" Type="Double" Nullable="false" />
+          <Property Name="Awards" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="CompletionStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_Education_PersonID" FromRole="Education" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="EmployeePerformance">
+          <Key>
+            <PropertyRef Name="EmployeePerformanceID" />
+          </Key>
+          <Property Name="EmployeePerformanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PerformanceGrade" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EfficiencyGrade" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SkillDomain" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_EmployeePerformanceID_PersonCNIC" FromRole="EmployeePerformance" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="EmployeeResourceAssignment">
+          <Key>
+            <PropertyRef Name="EmployeeResourceID" />
+          </Key>
+          <Property Name="EmployeeResourceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="ResourceID" Type="Int32" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AssignmentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ExpectedReturnDate" Type="DateTime" Precision="0" />
+          <Property Name="ActualReturnDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="InanimateResource" Relationship="Self.FK_EmployeeResourceAssignment_ResourceID" FromRole="EmployeeResourceAssignment" ToRole="InanimateResource" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_EmployeeResourceAssignmentEmployeeID_PersonCNIC" FromRole="EmployeeResourceAssignment" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="EmployeeTaskAssignment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TaskID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="AssignmentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Deadline" Type="DateTime" Precision="0" />
+          <Property Name="SubmissionDate" Type="DateTime" Precision="0" />
+          <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TaskCategory" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Deliverable" Relationship="Self.FK_EmployeeTaskAssignment_Task" FromRole="EmployeeTaskAssignment" ToRole="Deliverable" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_EmployeeTaskAssignment_EmployeeID" FromRole="EmployeeTaskAssignment" ToRole="Person" />
+          <NavigationProperty Name="Project" Relationship="Self.FK_EmployeeTaskAssignmentProjectID_Project" FromRole="EmployeeTaskAssignment" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="FinanceTransaction">
+          <Key>
+            <PropertyRef Name="FinanceTransactionID" />
+          </Key>
+          <Property Name="FinanceTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdentificationDocumentNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdentificationDocumentType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="SenderIdentification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiverIdentification" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransactionDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ProjectFinanceID" Type="Int32" />
+          <Property Name="ProjectID" Type="Int32" />
+          <Property Name="CustomerID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_FinanceTransactionsCustomerID_Customer" FromRole="FinanceTransactions" ToRole="Customer" />
+          <NavigationProperty Name="ProjectFinance" Relationship="Self.FK_FinanceTransactionsProjectFianaceID_ProjectFinance" FromRole="FinanceTransactions" ToRole="ProjectFinance" />
+          <NavigationProperty Name="Project" Relationship="Self.FK_ProjectID_FinanceTransactions" FromRole="FinanceTransactions" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="Health">
+          <Key>
+            <PropertyRef Name="HealthID" />
+          </Key>
+          <Property Name="HealthID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="BloodGroup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="BMI" Type="Double" />
+          <Property Name="EyeSight" Type="Int32" Nullable="true" />
+          <Property Name="Allergy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Disease" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OtherHealthIssue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_Health_PersonID" FromRole="Health" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="InanimateResource">
+          <Key>
+            <PropertyRef Name="ResourceID" />
+          </Key>
+          <Property Name="ResourceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Make" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price" Type="Double" Nullable="false" />
+          <Property Name="Condition" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="EmployeeResourceAssignments" Relationship="Self.FK_EmployeeResourceAssignment_ResourceID" FromRole="InanimateResource" ToRole="EmployeeResourceAssignment" />
+          <NavigationProperty Name="ProjectResourceAssignments" Relationship="Self.FK_ProjectResourceAssignmentResourceID_InanimateResourceResourceID" FromRole="InanimateResource" ToRole="ProjectResourceAssignment" />
+        </EntityType>
+        <EntityType Name="JobDescription">
+          <Key>
+            <PropertyRef Name="JobDescriptionID" />
+          </Key>
+          <Property Name="JobDescriptionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="Salary" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Department" Relationship="Self.FK_JobDescriptionDepartmentID_DepartmentID" FromRole="JobDescription" ToRole="Department" />
+          <NavigationProperty Name="People" Relationship="Self.FK_JobDesctiptionID_JobDescription" FromRole="JobDescription" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="KNNData">
+          <Key>
+            <PropertyRef Name="CNIC" />
+          </Key>
+          <Property Name="CNIC" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="JobDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DegreeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DegreeType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BoardUniversity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CGPA_Percentage" Type="Double" />
+          <Property Name="Salary" Type="Int32" />
+          <Property Name="Distance" Type="Double" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_KNNDataCNIC_PersonCNIC" FromRole="KNNData" ToRole="Person" />
+          <Property Name="Gender" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CertificationName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CertificationGrade" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BMI" Type="Double" />
+          <Property Name="Eyesight" Type="Int32" />
+          <Property Name="Allergy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Disease" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Skill" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Milestone">
+          <Key>
+            <PropertyRef Name="MilestoneID" />
+          </Key>
+          <Property Name="MilestoneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="400" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TotalDeliverables" Type="Int32" Nullable="false" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="AssignmentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Deadline" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ActualSubmissionDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Complaints" Relationship="Self.FK_MilestoneID_Milestone" FromRole="Milestone" ToRole="Complaints" />
+          <NavigationProperty Name="Deliverables" Relationship="Self.FK_Deliverable_MilestoneID" FromRole="Milestone" ToRole="Deliverable" />
+          <NavigationProperty Name="Project" Relationship="Self.FK_MilestoneProjectID_Project" FromRole="Milestone" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="CNIC" />
+          </Key>
+          <Property Name="CNIC" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EmploymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="JobDescriptionID" Type="Int32" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddressLine" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Street" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Allowances" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Certifications" Relationship="Self.FK_PersonID" FromRole="Person" ToRole="Certification" />
+          <NavigationProperty Name="ComplaintEmployeeAssignments" Relationship="Self.FK_CompliantEmployeeID_Person" FromRole="Person" ToRole="ComplaintEmployeeAssignment" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK_DepartmentHead_PersonCNIC" FromRole="Person" ToRole="Department" />
+          <NavigationProperty Name="Educations" Relationship="Self.FK_Education_PersonID" FromRole="Person" ToRole="Education" />
+          <NavigationProperty Name="EmployeePerformances" Relationship="Self.FK_EmployeePerformanceID_PersonCNIC" FromRole="Person" ToRole="EmployeePerformance" />
+          <NavigationProperty Name="EmployeeResourceAssignments" Relationship="Self.FK_EmployeeResourceAssignmentEmployeeID_PersonCNIC" FromRole="Person" ToRole="EmployeeResourceAssignment" />
+          <NavigationProperty Name="EmployeeTaskAssignments" Relationship="Self.FK_EmployeeTaskAssignment_EmployeeID" FromRole="Person" ToRole="EmployeeTaskAssignment" />
+          <NavigationProperty Name="Healths" Relationship="Self.FK_Health_PersonID" FromRole="Person" ToRole="Health" />
+          <NavigationProperty Name="JobDescription" Relationship="Self.FK_JobDesctiptionID_JobDescription" FromRole="Person" ToRole="JobDescription" />
+          <NavigationProperty Name="KNNData" Relationship="Self.FK_KNNDataCNIC_PersonCNIC" FromRole="Person" ToRole="KNNData" />
+          <NavigationProperty Name="PersonRelationshipAssignments" Relationship="Self.FK_PersonRelationshipID_Person1ID" FromRole="Person" ToRole="PersonRelationshipAssignment" />
+          <NavigationProperty Name="PersonRelationshipAssignments1" Relationship="Self.FK_PersonRelationshipID_Person2ID" FromRole="Person" ToRole="PersonRelationshipAssignment" />
+          <NavigationProperty Name="ProjectEmployeeAssignments" Relationship="Self.FK_ProjectEmployeeAssignmentEmployeeID_Person" FromRole="Person" ToRole="ProjectEmployeeAssignment" />
+          <NavigationProperty Name="ProjectResourceAssignments" Relationship="Self.FK_ProjectResourceAssignmentEmployeeID_ResourceID" FromRole="Person" ToRole="ProjectResourceAssignment" />
+        </EntityType>
+        <EntityType Name="PersonRelationshipAssignment">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Person1ID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Person2ID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Relationship2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Relationship" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_PersonRelationshipID_Person1ID" FromRole="PersonRelationshipAssignment" ToRole="Person" />
+          <NavigationProperty Name="Person1" Relationship="Self.FK_PersonRelationshipID_Person2ID" FromRole="PersonRelationshipAssignment" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PeopleCount" Type="Int32" />
+          <Property Name="LaunchDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EcpectedEndDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ActualEndDate" Type="DateTime" Precision="0" />
+          <Property Name="CompletionPercentage" Type="Int32" />
+          <Property Name="TotalMilestones" Type="Int32" />
+          <Property Name="ProjectStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProjectFinanceID" Type="Int32" />
+          <NavigationProperty Name="Complaints" Relationship="Self.FK_ProjectID_Project" FromRole="Project" ToRole="Complaints" />
+          <NavigationProperty Name="CustomerProjectMappings" Relationship="Self.FK_CustomerProjectMapping_Project" FromRole="Project" ToRole="CustomerProjectMapping" />
+          <NavigationProperty Name="Deliverables" Relationship="Self.FK_DeliverableProjectID_ProjectID" FromRole="Project" ToRole="Deliverable" />
+          <NavigationProperty Name="EmployeeTaskAssignments" Relationship="Self.FK_EmployeeTaskAssignmentProjectID_Project" FromRole="Project" ToRole="EmployeeTaskAssignment" />
+          <NavigationProperty Name="FinanceTransactions" Relationship="Self.FK_ProjectID_FinanceTransactions" FromRole="Project" ToRole="FinanceTransactions" />
+          <NavigationProperty Name="Milestones" Relationship="Self.FK_MilestoneProjectID_Project" FromRole="Project" ToRole="Milestone" />
+          <NavigationProperty Name="ProjectEmployeeAssignments" Relationship="Self.FK_ProjectEmployeeAssignmentProjectID_Project" FromRole="Project" ToRole="ProjectEmployeeAssignment" />
+          <NavigationProperty Name="ProjectFinance" Relationship="Self.FK_ProjectFinanceID_ProjectFinance" FromRole="Project" ToRole="ProjectFinance" />
+          <NavigationProperty Name="ProjectResourceAssignments" Relationship="Self.FK_ProjectResourceAssignmentEmployeeID_ProjectID" FromRole="Project" ToRole="ProjectResourceAssignment" />
+        </EntityType>
+        <EntityType Name="ProjectEmployeeAssignment">
+          <Key>
+            <PropertyRef Name="ProjectEmployeeID" />
+          </Key>
+          <Property Name="ProjectEmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AppointmentDate" Type="DateTime" Precision="0" />
+          <Property Name="Performance" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_ProjectEmployeeAssignmentEmployeeID_Person" FromRole="ProjectEmployeeAssignment" ToRole="Person" />
+          <NavigationProperty Name="Project" Relationship="Self.FK_ProjectEmployeeAssignmentProjectID_Project" FromRole="ProjectEmployeeAssignment" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="ProjectFinance">
+          <Key>
+            <PropertyRef Name="ProjectFinanceID" />
+          </Key>
+          <Property Name="ProjectFinanceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectBidPrice" Type="Int32" />
+          <Property Name="ProjectEstimatedCost" Type="Int32" Nullable="false" />
+          <Property Name="ProjectResourcesAmount" Type="Int32" />
+          <Property Name="ProjectPaymentDeadline" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="FinanceTransactions" Relationship="Self.FK_FinanceTransactionsProjectFianaceID_ProjectFinance" FromRole="ProjectFinance" ToRole="FinanceTransactions" />
+          <NavigationProperty Name="Projects" Relationship="Self.FK_ProjectFinanceID_ProjectFinance" FromRole="ProjectFinance" ToRole="Project" />
+        </EntityType>
+        <EntityType Name="ProjectResourceAssignment">
+          <Key>
+            <PropertyRef Name="ProjectResourceID" />
+          </Key>
+          <Property Name="ProjectResourceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectID" Type="Int32" Nullable="false" />
+          <Property Name="ResourceID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AssignmentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ExpectedReturnDate" Type="DateTime" Precision="0" />
+          <Property Name="ActualReturnDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="InanimateResource" Relationship="Self.FK_ProjectResourceAssignmentResourceID_InanimateResourceResourceID" FromRole="ProjectResourceAssignment" ToRole="InanimateResource" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_ProjectResourceAssignmentEmployeeID_ResourceID" FromRole="ProjectResourceAssignment" ToRole="Person" />
+          <NavigationProperty Name="Project" Relationship="Self.FK_ProjectResourceAssignmentEmployeeID_ProjectID" FromRole="ProjectResourceAssignment" ToRole="Project" />
+        </EntityType>
+        <Association Name="FK_PersonID">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Certification" Type="Self.Certification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="Certification">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ComplaintID_Complaint">
+          <End Role="Complaints" Type="Self.Complaint" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ComplaintEmployeeAssignment" Type="Self.ComplaintEmployeeAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Complaints">
+              <PropertyRef Name="ComplaintID" />
+            </Principal>
+            <Dependent Role="ComplaintEmployeeAssignment">
+              <PropertyRef Name="ComplaintID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompliantEmployeeID_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ComplaintEmployeeAssignment" Type="Self.ComplaintEmployeeAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="ComplaintEmployeeAssignment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_CustomerID">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Complaints" Type="Self.Complaint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerCNIC" />
+            </Principal>
+            <Dependent Role="Complaints">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MilestoneID_Milestone">
+          <End Role="Milestone" Type="Self.Milestone" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Complaints" Type="Self.Complaint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Milestone">
+              <PropertyRef Name="MilestoneID" />
+            </Principal>
+            <Dependent Role="Complaints">
+              <PropertyRef Name="MilestoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectID_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Complaints" Type="Self.Complaint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Complaints">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TaskID_Task">
+          <End Role="Deliverable" Type="Self.Deliverable" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Complaints" Type="Self.Complaint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deliverable">
+              <PropertyRef Name="TaskID" />
+            </Principal>
+            <Dependent Role="Complaints">
+              <PropertyRef Name="TaskID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerProjectMapping_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CustomerProjectMapping" Type="Self.CustomerProjectMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerCNIC" />
+            </Principal>
+            <Dependent Role="CustomerProjectMapping">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FinanceTransactionsCustomerID_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FinanceTransactions" Type="Self.FinanceTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="CustomerCNIC" />
+            </Principal>
+            <Dependent Role="FinanceTransactions">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerProjectMapping_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="CustomerProjectMapping" Type="Self.CustomerProjectMapping" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="CustomerProjectMapping">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Deliverable_MilestoneID">
+          <End Role="Milestone" Type="Self.Milestone" Multiplicity="1" />
+          <End Role="Deliverable" Type="Self.Deliverable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Milestone">
+              <PropertyRef Name="MilestoneID" />
+            </Principal>
+            <Dependent Role="Deliverable">
+              <PropertyRef Name="MilestoneID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DeliverableProjectID_ProjectID">
+          <End Role="Project" Type="Self.Project" Multiplicity="1" />
+          <End Role="Deliverable" Type="Self.Deliverable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Deliverable">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeTaskAssignment_Task">
+          <End Role="Deliverable" Type="Self.Deliverable" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeTaskAssignment" Type="Self.EmployeeTaskAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Deliverable">
+              <PropertyRef Name="TaskID" />
+            </Principal>
+            <Dependent Role="EmployeeTaskAssignment">
+              <PropertyRef Name="TaskID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DepartmentHead_PersonCNIC">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Department" Type="Self.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="Department">
+              <PropertyRef Name="DepartmentHead" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobDescriptionDepartmentID_DepartmentID">
+          <End Role="Department" Type="Self.Department" Multiplicity="1" />
+          <End Role="JobDescription" Type="Self.JobDescription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Department">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="JobDescription">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Education_PersonID">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Education" Type="Self.Education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="Education">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeePerformanceID_PersonCNIC">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeePerformance" Type="Self.EmployeePerformance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="EmployeePerformance">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeResourceAssignment_ResourceID">
+          <End Role="InanimateResource" Type="Self.InanimateResource" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeResourceAssignment" Type="Self.EmployeeResourceAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InanimateResource">
+              <PropertyRef Name="ResourceID" />
+            </Principal>
+            <Dependent Role="EmployeeResourceAssignment">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeResourceAssignmentEmployeeID_PersonCNIC">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeResourceAssignment" Type="Self.EmployeeResourceAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="EmployeeResourceAssignment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeTaskAssignment_EmployeeID">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeTaskAssignment" Type="Self.EmployeeTaskAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="EmployeeTaskAssignment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeeTaskAssignmentProjectID_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="EmployeeTaskAssignment" Type="Self.EmployeeTaskAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="EmployeeTaskAssignment">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FinanceTransactionsProjectFianaceID_ProjectFinance">
+          <End Role="ProjectFinance" Type="Self.ProjectFinance" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FinanceTransactions" Type="Self.FinanceTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectFinance">
+              <PropertyRef Name="ProjectFinanceID" />
+            </Principal>
+            <Dependent Role="FinanceTransactions">
+              <PropertyRef Name="ProjectFinanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectID_FinanceTransactions">
+          <End Role="Project" Type="Self.Project" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="FinanceTransactions" Type="Self.FinanceTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="FinanceTransactions">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Health_PersonID">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Health" Type="Self.Health" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="Health">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectResourceAssignmentResourceID_InanimateResourceResourceID">
+          <End Role="InanimateResource" Type="Self.InanimateResource" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectResourceAssignment" Type="Self.ProjectResourceAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="InanimateResource">
+              <PropertyRef Name="ResourceID" />
+            </Principal>
+            <Dependent Role="ProjectResourceAssignment">
+              <PropertyRef Name="ResourceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobDesctiptionID_JobDescription">
+          <End Role="JobDescription" Type="Self.JobDescription" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobDescription">
+              <PropertyRef Name="JobDescriptionID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="JobDescriptionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KNNDataCNIC_PersonCNIC">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="KNNData" Type="Self.KNNData" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="KNNData">
+              <PropertyRef Name="CNIC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MilestoneProjectID_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1" />
+          <End Role="Milestone" Type="Self.Milestone" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="Milestone">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonRelationshipID_Person1ID">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PersonRelationshipAssignment" Type="Self.PersonRelationshipAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="PersonRelationshipAssignment">
+              <PropertyRef Name="Person1ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonRelationshipID_Person2ID">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="PersonRelationshipAssignment" Type="Self.PersonRelationshipAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="PersonRelationshipAssignment">
+              <PropertyRef Name="Person2ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectEmployeeAssignmentEmployeeID_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectEmployeeAssignment" Type="Self.ProjectEmployeeAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="ProjectEmployeeAssignment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectResourceAssignmentEmployeeID_ResourceID">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectResourceAssignment" Type="Self.ProjectResourceAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="CNIC" />
+            </Principal>
+            <Dependent Role="ProjectResourceAssignment">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectEmployeeAssignmentProjectID_Project">
+          <End Role="Project" Type="Self.Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectEmployeeAssignment" Type="Self.ProjectEmployeeAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ProjectEmployeeAssignment">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectFinanceID_ProjectFinance">
+          <End Role="ProjectFinance" Type="Self.ProjectFinance" Multiplicity="0..1" />
+          <End Role="Project" Type="Self.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectFinance">
+              <PropertyRef Name="ProjectFinanceID" />
+            </Principal>
+            <Dependent Role="Project">
+              <PropertyRef Name="ProjectFinanceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectResourceAssignmentEmployeeID_ProjectID">
+          <End Role="Project" Type="Self.Project" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ProjectResourceAssignment" Type="Self.ProjectResourceAssignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="ProjectResourceAssignment">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DSS_CIO2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Certifications" EntityType="Self.Certification" />
+          <EntitySet Name="ComplaintEmployeeAssignments" EntityType="Self.ComplaintEmployeeAssignment" />
+          <EntitySet Name="Complaints" EntityType="Self.Complaint" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="CustomerProjectMappings" EntityType="Self.CustomerProjectMapping" />
+          <EntitySet Name="Deliverables" EntityType="Self.Deliverable" />
+          <EntitySet Name="Departments" EntityType="Self.Department" />
+          <EntitySet Name="Educations" EntityType="Self.Education" />
+          <EntitySet Name="EmployeePerformances" EntityType="Self.EmployeePerformance" />
+          <EntitySet Name="EmployeeResourceAssignments" EntityType="Self.EmployeeResourceAssignment" />
+          <EntitySet Name="EmployeeTaskAssignments" EntityType="Self.EmployeeTaskAssignment" />
+          <EntitySet Name="FinanceTransactions" EntityType="Self.FinanceTransaction" />
+          <EntitySet Name="Healths" EntityType="Self.Health" />
+          <EntitySet Name="InanimateResources" EntityType="Self.InanimateResource" />
+          <EntitySet Name="JobDescriptions" EntityType="Self.JobDescription" />
+          <EntitySet Name="KNNDatas" EntityType="Self.KNNData" />
+          <EntitySet Name="Milestones" EntityType="Self.Milestone" />
+          <EntitySet Name="People" EntityType="Self.Person" />
+          <EntitySet Name="PersonRelationshipAssignments" EntityType="Self.PersonRelationshipAssignment" />
+          <EntitySet Name="Projects" EntityType="Self.Project" />
+          <EntitySet Name="ProjectEmployeeAssignments" EntityType="Self.ProjectEmployeeAssignment" />
+          <EntitySet Name="ProjectFinances" EntityType="Self.ProjectFinance" />
+          <EntitySet Name="ProjectResourceAssignments" EntityType="Self.ProjectResourceAssignment" />
+          <AssociationSet Name="FK_PersonID" Association="Self.FK_PersonID">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Certification" EntitySet="Certifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ComplaintID_Complaint" Association="Self.FK_ComplaintID_Complaint">
+            <End Role="Complaints" EntitySet="Complaints" />
+            <End Role="ComplaintEmployeeAssignment" EntitySet="ComplaintEmployeeAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompliantEmployeeID_Person" Association="Self.FK_CompliantEmployeeID_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="ComplaintEmployeeAssignment" EntitySet="ComplaintEmployeeAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_CustomerID" Association="Self.FK_Customer_CustomerID">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Complaints" EntitySet="Complaints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MilestoneID_Milestone" Association="Self.FK_MilestoneID_Milestone">
+            <End Role="Milestone" EntitySet="Milestones" />
+            <End Role="Complaints" EntitySet="Complaints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectID_Project" Association="Self.FK_ProjectID_Project">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Complaints" EntitySet="Complaints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TaskID_Task" Association="Self.FK_TaskID_Task">
+            <End Role="Deliverable" EntitySet="Deliverables" />
+            <End Role="Complaints" EntitySet="Complaints" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerProjectMapping_Customer" Association="Self.FK_CustomerProjectMapping_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerProjectMapping" EntitySet="CustomerProjectMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FinanceTransactionsCustomerID_Customer" Association="Self.FK_FinanceTransactionsCustomerID_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="FinanceTransactions" EntitySet="FinanceTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerProjectMapping_Project" Association="Self.FK_CustomerProjectMapping_Project">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="CustomerProjectMapping" EntitySet="CustomerProjectMappings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Deliverable_MilestoneID" Association="Self.FK_Deliverable_MilestoneID">
+            <End Role="Milestone" EntitySet="Milestones" />
+            <End Role="Deliverable" EntitySet="Deliverables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DeliverableProjectID_ProjectID" Association="Self.FK_DeliverableProjectID_ProjectID">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Deliverable" EntitySet="Deliverables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeTaskAssignment_Task" Association="Self.FK_EmployeeTaskAssignment_Task">
+            <End Role="Deliverable" EntitySet="Deliverables" />
+            <End Role="EmployeeTaskAssignment" EntitySet="EmployeeTaskAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DepartmentHead_PersonCNIC" Association="Self.FK_DepartmentHead_PersonCNIC">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Department" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobDescriptionDepartmentID_DepartmentID" Association="Self.FK_JobDescriptionDepartmentID_DepartmentID">
+            <End Role="Department" EntitySet="Departments" />
+            <End Role="JobDescription" EntitySet="JobDescriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Education_PersonID" Association="Self.FK_Education_PersonID">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Education" EntitySet="Educations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeePerformanceID_PersonCNIC" Association="Self.FK_EmployeePerformanceID_PersonCNIC">
+            <End Role="Person" EntitySet="People" />
+            <End Role="EmployeePerformance" EntitySet="EmployeePerformances" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeResourceAssignment_ResourceID" Association="Self.FK_EmployeeResourceAssignment_ResourceID">
+            <End Role="InanimateResource" EntitySet="InanimateResources" />
+            <End Role="EmployeeResourceAssignment" EntitySet="EmployeeResourceAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeResourceAssignmentEmployeeID_PersonCNIC" Association="Self.FK_EmployeeResourceAssignmentEmployeeID_PersonCNIC">
+            <End Role="Person" EntitySet="People" />
+            <End Role="EmployeeResourceAssignment" EntitySet="EmployeeResourceAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeTaskAssignment_EmployeeID" Association="Self.FK_EmployeeTaskAssignment_EmployeeID">
+            <End Role="Person" EntitySet="People" />
+            <End Role="EmployeeTaskAssignment" EntitySet="EmployeeTaskAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeeTaskAssignmentProjectID_Project" Association="Self.FK_EmployeeTaskAssignmentProjectID_Project">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="EmployeeTaskAssignment" EntitySet="EmployeeTaskAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FinanceTransactionsProjectFianaceID_ProjectFinance" Association="Self.FK_FinanceTransactionsProjectFianaceID_ProjectFinance">
+            <End Role="ProjectFinance" EntitySet="ProjectFinances" />
+            <End Role="FinanceTransactions" EntitySet="FinanceTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectID_FinanceTransactions" Association="Self.FK_ProjectID_FinanceTransactions">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="FinanceTransactions" EntitySet="FinanceTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Health_PersonID" Association="Self.FK_Health_PersonID">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Health" EntitySet="Healths" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectResourceAssignmentResourceID_InanimateResourceResourceID" Association="Self.FK_ProjectResourceAssignmentResourceID_InanimateResourceResourceID">
+            <End Role="InanimateResource" EntitySet="InanimateResources" />
+            <End Role="ProjectResourceAssignment" EntitySet="ProjectResourceAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobDesctiptionID_JobDescription" Association="Self.FK_JobDesctiptionID_JobDescription">
+            <End Role="JobDescription" EntitySet="JobDescriptions" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KNNDataCNIC_PersonCNIC" Association="Self.FK_KNNDataCNIC_PersonCNIC">
+            <End Role="Person" EntitySet="People" />
+            <End Role="KNNData" EntitySet="KNNDatas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MilestoneProjectID_Project" Association="Self.FK_MilestoneProjectID_Project">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="Milestone" EntitySet="Milestones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonRelationshipID_Person1ID" Association="Self.FK_PersonRelationshipID_Person1ID">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonRelationshipAssignment" EntitySet="PersonRelationshipAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonRelationshipID_Person2ID" Association="Self.FK_PersonRelationshipID_Person2ID">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonRelationshipAssignment" EntitySet="PersonRelationshipAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectEmployeeAssignmentEmployeeID_Person" Association="Self.FK_ProjectEmployeeAssignmentEmployeeID_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="ProjectEmployeeAssignment" EntitySet="ProjectEmployeeAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectResourceAssignmentEmployeeID_ResourceID" Association="Self.FK_ProjectResourceAssignmentEmployeeID_ResourceID">
+            <End Role="Person" EntitySet="People" />
+            <End Role="ProjectResourceAssignment" EntitySet="ProjectResourceAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectEmployeeAssignmentProjectID_Project" Association="Self.FK_ProjectEmployeeAssignmentProjectID_Project">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="ProjectEmployeeAssignment" EntitySet="ProjectEmployeeAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectFinanceID_ProjectFinance" Association="Self.FK_ProjectFinanceID_ProjectFinance">
+            <End Role="ProjectFinance" EntitySet="ProjectFinances" />
+            <End Role="Project" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectResourceAssignmentEmployeeID_ProjectID" Association="Self.FK_ProjectResourceAssignmentEmployeeID_ProjectID">
+            <End Role="Project" EntitySet="Projects" />
+            <End Role="ProjectResourceAssignment" EntitySet="ProjectResourceAssignments" />
+          </AssociationSet>
+          <FunctionImport Name="func_Split" IsComposable="true" ReturnType="Collection(DSS_CIO3Model.func_Split_Result)">
+            <Parameter Name="DelimitedString" Mode="In" Type="String" />
+            <Parameter Name="DelimitedString2" Mode="In" Type="String" />
+            <Parameter Name="DelimitedString3" Mode="In" Type="String" />
+            <Parameter Name="Delimiter" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="KNNALGORITHM">
+            <Parameter Name="CNIC" Mode="In" Type="String" />
+            <Parameter Name="salary1" Mode="InOut" Type="Int32" />
+            <Parameter Name="salary2" Mode="InOut" Type="Int32" />
+            <Parameter Name="salary3" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="KNNALGORITHMSKILL">
+            <Parameter Name="CNIC" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="SkillPredictions" EntityType="DSS_CIO3Model.SkillPrediction" />
+        </EntityContainer>
+        <EntityType Name="SkillPrediction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Skill" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Performance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Efficiency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DSS_CIO3ModelStoreContainer" CdmEntityContainer="DSS_CIO2Entities">
+          <EntitySetMapping Name="Certifications">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.Certification">
+              <MappingFragment StoreEntitySet="Certification">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="CertificationID" ColumnName="CertificationID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+                <ScalarProperty Name="CompletionStatus" ColumnName="CompletionStatus" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+                <ScalarProperty Name="ApplicationStatus" ColumnName="ApplicationStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComplaintEmployeeAssignments">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.ComplaintEmployeeAssignment">
+              <MappingFragment StoreEntitySet="ComplaintEmployeeAssignment">
+                <ScalarProperty Name="ComplaintAssignmentID" ColumnName="ComplaintAssignmentID" />
+                <ScalarProperty Name="ComplaintID" ColumnName="ComplaintID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AssignmentDate" ColumnName="AssignmentDate" />
+                <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+                <ScalarProperty Name="ResolutionDate" ColumnName="ResolutionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Complaints">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.Complaint">
+              <MappingFragment StoreEntitySet="Complaints">
+                <ScalarProperty Name="ComplaintID" ColumnName="ComplaintID" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="MilestoneID" ColumnName="MilestoneID" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Severity" ColumnName="Severity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerCNIC" ColumnName="CustomerCNIC" />
+                <ScalarProperty Name="CustomerFullName" ColumnName="CustomerFullName" />
+                <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Organization" ColumnName="Organization" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerProjectMappings">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.CustomerProjectMapping">
+              <MappingFragment StoreEntitySet="CustomerProjectMapping">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="SatisfactionLevel" ColumnName="SatisfactionLevel" />
+                <ScalarProperty Name="CustomerProjectId" ColumnName="CustomerProjectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deliverables">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.Deliverable">
+              <MappingFragment StoreEntitySet="Deliverable">
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AssignedBy" ColumnName="AssignedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="ReviewedBy" ColumnName="ReviewedBy" />
+                <ScalarProperty Name="MilestoneID" ColumnName="MilestoneID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.Department">
+              <MappingFragment StoreEntitySet="Department">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DepartmentHead" ColumnName="DepartmentHead" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Educations">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.Education">
+              <MappingFragment StoreEntitySet="Education">
+                <ScalarProperty Name="EducationID" ColumnName="EducationID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+                <ScalarProperty Name="DegreeType" ColumnName="DegreeType" />
+                <ScalarProperty Name="Board_University" ColumnName="Board_University" />
+                <ScalarProperty Name="CGPA_Percentage" ColumnName="CGPA_Percentage" />
+                <ScalarProperty Name="Awards" ColumnName="Awards" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="CompletionStatus" ColumnName="CompletionStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeePerformances">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.EmployeePerformance">
+              <MappingFragment StoreEntitySet="EmployeePerformance">
+                <ScalarProperty Name="EmployeePerformanceID" ColumnName="EmployeePerformanceID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="PerformanceGrade" ColumnName="PerformanceGrade" />
+                <ScalarProperty Name="EfficiencyGrade" ColumnName="EfficiencyGrade" />
+                <ScalarProperty Name="SkillDomain" ColumnName="SkillDomain" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeResourceAssignments">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.EmployeeResourceAssignment">
+              <MappingFragment StoreEntitySet="EmployeeResourceAssignment">
+                <ScalarProperty Name="EmployeeResourceID" ColumnName="EmployeeResourceID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AssignmentDate" ColumnName="AssignmentDate" />
+                <ScalarProperty Name="ExpectedReturnDate" ColumnName="ExpectedReturnDate" />
+                <ScalarProperty Name="ActualReturnDate" ColumnName="ActualReturnDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeTaskAssignments">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.EmployeeTaskAssignment">
+              <MappingFragment StoreEntitySet="EmployeeTaskAssignment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="AssignmentDate" ColumnName="AssignmentDate" />
+                <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+                <ScalarProperty Name="SubmissionDate" ColumnName="SubmissionDate" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="TaskCategory" ColumnName="TaskCategory" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FinanceTransactions">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.FinanceTransaction">
+              <MappingFragment StoreEntitySet="FinanceTransactions">
+                <ScalarProperty Name="FinanceTransactionID" ColumnName="FinanceTransactionID" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="IdentificationDocumentNumber" ColumnName="IdentificationDocumentNumber" />
+                <ScalarProperty Name="IdentificationDocumentType" ColumnName="IdentificationDocumentType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="SenderIdentification" ColumnName="SenderIdentification" />
+                <ScalarProperty Name="ReceiverIdentification" ColumnName="ReceiverIdentification" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="ProjectFinanceID" ColumnName="ProjectFinanceID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Healths">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.Health">
+              <MappingFragment StoreEntitySet="Health">
+                <ScalarProperty Name="HealthID" ColumnName="HealthID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+                <ScalarProperty Name="BMI" ColumnName="BMI" />
+                <ScalarProperty Name="EyeSight" ColumnName="EyeSight" />
+                <ScalarProperty Name="Allergy" ColumnName="Allergy" />
+                <ScalarProperty Name="Disease" ColumnName="Disease" />
+                <ScalarProperty Name="OtherHealthIssue" ColumnName="OtherHealthIssue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InanimateResources">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.InanimateResource">
+              <MappingFragment StoreEntitySet="InanimateResource">
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Condition" ColumnName="Condition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobDescriptions">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.JobDescription">
+              <MappingFragment StoreEntitySet="JobDescription">
+                <ScalarProperty Name="JobDescriptionID" ColumnName="JobDescriptionID" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KNNDatas">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.KNNData">
+              <MappingFragment StoreEntitySet="KNNData">
+                <ScalarProperty Name="Skill" ColumnName="Skill" />
+                <ScalarProperty Name="Disease" ColumnName="Disease" />
+                <ScalarProperty Name="Allergy" ColumnName="Allergy" />
+                <ScalarProperty Name="Eyesight" ColumnName="Eyesight" />
+                <ScalarProperty Name="BMI" ColumnName="BMI" />
+                <ScalarProperty Name="CertificationGrade" ColumnName="CertificationGrade" />
+                <ScalarProperty Name="CertificationName" ColumnName="CertificationName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+                <ScalarProperty Name="DegreeType" ColumnName="DegreeType" />
+                <ScalarProperty Name="BoardUniversity" ColumnName="BoardUniversity" />
+                <ScalarProperty Name="CGPA_Percentage" ColumnName="CGPA_Percentage" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Distance" ColumnName="Distance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Milestones">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.Milestone">
+              <MappingFragment StoreEntitySet="Milestone">
+                <ScalarProperty Name="MilestoneID" ColumnName="MilestoneID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TotalDeliverables" ColumnName="TotalDeliverables" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="AssignmentDate" ColumnName="AssignmentDate" />
+                <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+                <ScalarProperty Name="ActualSubmissionDate" ColumnName="ActualSubmissionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+                <ScalarProperty Name="JobDescriptionID" ColumnName="JobDescriptionID" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="AddressLine" ColumnName="AddressLine" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Allowances" ColumnName="Allowances" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonRelationshipAssignments">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.PersonRelationshipAssignment">
+              <MappingFragment StoreEntitySet="PersonRelationshipAssignment">
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="Person1ID" ColumnName="Person1ID" />
+                <ScalarProperty Name="Person2ID" ColumnName="Person2ID" />
+                <ScalarProperty Name="Relationship2" ColumnName="Relationship2" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.Project">
+              <MappingFragment StoreEntitySet="Project">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PeopleCount" ColumnName="PeopleCount" />
+                <ScalarProperty Name="LaunchDate" ColumnName="LaunchDate" />
+                <ScalarProperty Name="EcpectedEndDate" ColumnName="EcpectedEndDate" />
+                <ScalarProperty Name="ActualEndDate" ColumnName="ActualEndDate" />
+                <ScalarProperty Name="CompletionPercentage" ColumnName="CompletionPercentage" />
+                <ScalarProperty Name="TotalMilestones" ColumnName="TotalMilestones" />
+                <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+                <ScalarProperty Name="ProjectFinanceID" ColumnName="ProjectFinanceID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectEmployeeAssignments">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.ProjectEmployeeAssignment">
+              <MappingFragment StoreEntitySet="ProjectEmployeeAssignment">
+                <ScalarProperty Name="ProjectEmployeeID" ColumnName="ProjectEmployeeID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+                <ScalarProperty Name="Performance" ColumnName="Performance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectFinances">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.ProjectFinance">
+              <MappingFragment StoreEntitySet="ProjectFinance">
+                <ScalarProperty Name="ProjectFinanceID" ColumnName="ProjectFinanceID" />
+                <ScalarProperty Name="ProjectBidPrice" ColumnName="ProjectBidPrice" />
+                <ScalarProperty Name="ProjectEstimatedCost" ColumnName="ProjectEstimatedCost" />
+                <ScalarProperty Name="ProjectResourcesAmount" ColumnName="ProjectResourcesAmount" />
+                <ScalarProperty Name="ProjectPaymentDeadline" ColumnName="ProjectPaymentDeadline" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectResourceAssignments">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.ProjectResourceAssignment">
+              <MappingFragment StoreEntitySet="ProjectResourceAssignment">
+                <ScalarProperty Name="ProjectResourceID" ColumnName="ProjectResourceID" />
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AssignmentDate" ColumnName="AssignmentDate" />
+                <ScalarProperty Name="ExpectedReturnDate" ColumnName="ExpectedReturnDate" />
+                <ScalarProperty Name="ActualReturnDate" ColumnName="ActualReturnDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionName="DSS_CIO3Model.Store.func_Split" FunctionImportName="func_Split">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DSS_CIO3Model.func_Split_Result">
+                <ScalarProperty Name="ElementID" ColumnName="ElementID" />
+                <ScalarProperty Name="Element" ColumnName="Element" />
+                <ScalarProperty Name="Element2" ColumnName="Element2" />
+                <ScalarProperty Name="Element3" ColumnName="Element3" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="KNNALGORITHM" FunctionName="DSS_CIO3Model.Store.KNNALGORITHM" />
+          <FunctionImportMapping FunctionImportName="KNNALGORITHMSKILL" FunctionName="DSS_CIO3Model.Store.KNNALGORITHMSKILL" />
+          <EntitySetMapping Name="SkillPredictions">
+            <EntityTypeMapping TypeName="DSS_CIO3Model.SkillPrediction">
+              <MappingFragment StoreEntitySet="SkillPrediction">
+                <ScalarProperty Name="Efficiency" ColumnName="Efficiency" />
+                <ScalarProperty Name="Performance" ColumnName="Performance" />
+                <ScalarProperty Name="Skill" ColumnName="Skill" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

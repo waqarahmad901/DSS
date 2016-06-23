@@ -1,0 +1,360 @@
+﻿@model DSS_CIO.Models.Person
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressLine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressLine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Street)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Street)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JobDescription.JobTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JobDescription.JobTitle)
+        </dd>
+
+    </dl>
+    <h4>
+        Educational Details
+    </h4>
+    <table class="table">
+        <tr>
+
+            <th>
+                Degree Name
+            </th>
+            <th>
+                Degree Type
+            </th>
+            <th>
+                Board/University
+            </th>
+            <th>
+                CGPA/Percentage
+            </th>
+            <th>
+                Awards
+            </th>
+            <th>
+                Completion Status
+            </th>
+            <th>
+                Start Date
+            </th>
+            <th>
+                End Date
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Educations)
+        {
+            if (Model.CNIC == item.PersonID)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DegreeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DegreeType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Board_University)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CGPA_Percentage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Awards)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompletionStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EndDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Education", new { id = item.EducationID, cnic = Model.CNIC }, "") |
+
+                        @Html.ActionLink("Delete", "Delete", "Education", new { id = item.EducationID }, "")
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <p>
+        @Html.ActionLink("Add Educational Details of " + Model.FName + ".", "Edit", "Education", new { id = 0, cnic = Model.CNIC }, "")
+    </p>
+    <h4>
+        Certifications
+    </h4>
+    <table class="table">
+        <tr>
+
+            <th>
+                Certification Name
+            </th>
+            <th>
+                Duration
+            </th>
+            <th>
+                Completion Status
+            </th>
+            <th>
+                Grade
+            </th>
+            <th>
+                Application Status
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Certifications)
+        {
+            if (Model.CNIC == item.PersonID)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Duration)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CompletionStatus)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Grade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicationStatus)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Education", new { id = item.CertificationID, cnic = Model.CNIC }, "") |
+
+                        @Html.ActionLink("Delete", "Delete", "Education", new { id = item.CertificationID }, "")
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <p>
+        @Html.ActionLink("Add Certifications of " + Model.FName + ".", "Edit", "Certification", new { id = 0, cnic = Model.CNIC }, "")
+    </p>
+    <h4>
+        Health Details
+    </h4>
+    <table class="table">
+        <tr>
+
+            <th>
+                Blood Group
+            </th>
+            <th>
+                BMI
+            </th>
+            <th>
+                Eye Sight
+            </th>
+            <th>
+                Allergy
+            </th>
+            <th>
+                Disease
+            </th>
+            <th>
+                Other Health Issues
+            </th>
+            <th> </th>
+        </tr>
+
+        @foreach (var item in Model.Healths)
+        {
+            if (Model.CNIC == item.PersonID)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BloodGroup)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BMI)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EyeSight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Disease)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.OtherHealthIssue)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "Health", new { id = item.HealthID, cnic = Model.CNIC }, "") |
+
+                        @Html.ActionLink("Delete", "Delete", "Health", new { id = item.HealthID, cnic = Model.CNIC }, "")
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <p>
+        @Html.ActionLink("Add Health Details of " + Model.FName + ".", "Edit", "Health", new { id = 0, cnic = Model.CNIC }, "")
+    </p>
+    <h4>
+        @Model.FName @Model.LName's Relatives
+    </h4>
+    <table class="table">
+        <tr>
+
+            <th>
+                Person Name
+            </th>
+            <th>
+                Relationship with @Model.FName
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.PersonRelationshipAssignments)
+        {
+            if (item.Person.CNIC == Model.CNIC)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person1.FName) @Html.DisplayFor(modelItem => item.Person1.LName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person.FName) is @Html.DisplayFor(modelItem => item.Relationship) of @Html.DisplayFor(modelItem => item.Person1.FName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "PersonRelationshipAssignment", new { id = item.RelationshipID, cnic = Model.CNIC }, "") |
+                        @Html.ActionLink("Delete", "Delete", "PersonRelationshipAssignment", new { id = item.RelationshipID }, "")
+                    </td>
+                </tr>
+            }
+        }
+
+        @foreach (var item in Model.PersonRelationshipAssignments1)
+        {
+            if (item.Person2ID == Model.CNIC)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person1.FName) @Html.DisplayFor(modelItem => item.Person1.LName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Person1.FName) is @Html.DisplayFor(modelItem => item.Relationship2) of @Html.DisplayFor(modelItem => item.Person.FName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "PersonRelationshipAssignment", new { id = item.RelationshipID, cnic = Model.CNIC }, "") |
+                        @Html.ActionLink("Delete", "Delete", "PersonRelationshipAssignment", new { id = item.RelationshipID }, "")
+                    </td>
+                </tr>
+            }
+
+
+        }
+    </table>
+    <p>
+        @Html.ActionLink("Add More Relationships of " + Model.FName + ".", "Edit", "PersonRelationshipAssignment", new { id = 0, cnic = Model.CNIC }, "")
+    </p>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CNIC }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

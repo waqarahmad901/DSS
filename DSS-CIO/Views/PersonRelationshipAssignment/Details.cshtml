@@ -1,0 +1,42 @@
+﻿@model DSS_CIO.Models.PersonRelationshipAssignment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PersonRelationshipAssignment</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Relationship)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Relationship)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.FName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person1.FName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person1.FName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RelationshipID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

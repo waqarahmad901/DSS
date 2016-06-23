@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DSS_CIO.Models.CustomerProjectMapping>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SatisfactionLevel)
+        </th> 
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SatisfactionLevel)
+        </td>
+ 
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.Contact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerProjectId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CustomerProjectId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerProjectId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DSS_CIO.Models.ProjectResourceAssignment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AssignmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpectedReturnDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActualReturnDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InanimateResource.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Person.FName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AssignmentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpectedReturnDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActualReturnDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InanimateResource.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Person.FName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ProjectResourceID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ProjectResourceID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ProjectResourceID })
+        </td>
+    </tr>
+}
+
+</table>
