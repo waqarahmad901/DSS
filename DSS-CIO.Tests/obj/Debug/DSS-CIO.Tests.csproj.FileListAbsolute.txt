@@ -1,0 +1,90 @@
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\DSS-CIO.Tests.dll.config
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\DSS-CIO.Tests.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\DSS-CIO.Tests.pdb
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\DSS-CIO.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Newtonsoft.Json.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.Helpers.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.Mvc.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.Razor.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\EntityFramework.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.Optimization.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Owin.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\DSS-CIO.pdb
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Newtonsoft.Json.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.Helpers.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.Mvc.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.Razor.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\EntityFramework.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\System.Web.Optimization.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\obj\Debug\DSS-CIO.Tests.csprojResolveAssemblyReference.cache
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\obj\Debug\DSS-CIO.Tests.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO.Tests\obj\Debug\DSS-CIO.Tests.pdb
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\DSS-CIO.Tests.dll.config
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\DSS-CIO.Tests.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\DSS-CIO.Tests.pdb
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\DSS-CIO.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Newtonsoft.Json.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.Helpers.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.Mvc.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.Razor.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.Optimization.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Owin.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\EntityFramework.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\DSS-CIO.pdb
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Newtonsoft.Json.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.Helpers.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.Mvc.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.Razor.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\System.Web.Optimization.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\EntityFramework.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\obj\Debug\DSS-CIO.Tests.csprojResolveAssemblyReference.cache
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\obj\Debug\DSS-CIO.Tests.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO.Tests\obj\Debug\DSS-CIO.Tests.pdb
