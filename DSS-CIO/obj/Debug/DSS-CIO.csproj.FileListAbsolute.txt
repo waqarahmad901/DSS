@@ -1,0 +1,165 @@
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\DSS-CIO.dll.config
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\DSS-CIO.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\DSS-CIO.pdb
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Antlr3.Runtime.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\EntityFramework.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\EntityFramework.SqlServer.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.Google.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Web.Infrastructure.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Newtonsoft.Json.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Owin.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.Helpers.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.Mvc.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.Optimization.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.Razor.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.WebPages.Deployment.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.WebPages.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.WebPages.Razor.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\WebGrease.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.Helpers.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.Mvc.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.Optimization.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.Razor.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.WebPages.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.WebPages.Deployment.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\System.Web.WebPages.Razor.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Newtonsoft.Json.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Antlr3.Runtime.pdb
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\EntityFramework.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\EntityFramework.SqlServer.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.Google.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\obj\Debug\DSS-CIO.csprojResolveAssemblyReference.cache
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\obj\Debug\DSS-CIO.dll
+c:\users\h r k\documents\visual studio 2013\Projects\DSS-CIO\DSS-CIO\obj\Debug\DSS-CIO.pdb
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\obj\Debug\DSS-CIO.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\obj\Debug\DSS-CIO.pdb
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\DSS-CIO.dll.config
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\DSS-CIO.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\DSS-CIO.pdb
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Antlr3.Runtime.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\EntityFramework.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\EntityFramework.SqlServer.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.Google.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Web.Infrastructure.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Newtonsoft.Json.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Owin.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.Helpers.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.Mvc.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.Optimization.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.Razor.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.WebPages.Deployment.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.WebPages.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.WebPages.Razor.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\WebGrease.dll
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.Helpers.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.Mvc.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.Optimization.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.Razor.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.WebPages.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.WebPages.Deployment.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\System.Web.WebPages.Razor.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Newtonsoft.Json.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Antlr3.Runtime.pdb
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\EntityFramework.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\EntityFramework.SqlServer.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.Google.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Clients\Imran Elixir ref\Archive\DSS-CIO(Version 7)\DSS-CIO\obj\Debug\DSS-CIO.csprojResolveAssemblyReference.cache
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\DSS-CIO.dll.config
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\DSS-CIO.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\DSS-CIO.pdb
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Antlr3.Runtime.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\EntityFramework.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\EntityFramework.SqlServer.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.Google.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Web.Infrastructure.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Newtonsoft.Json.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Owin.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.Helpers.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.Mvc.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.Optimization.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.Razor.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.WebPages.Deployment.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.WebPages.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.WebPages.Razor.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\WebGrease.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\EntityFramework.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\EntityFramework.SqlServer.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.Helpers.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.Mvc.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.Optimization.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.Razor.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.WebPages.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.WebPages.Deployment.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\System.Web.WebPages.Razor.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Newtonsoft.Json.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Antlr3.Runtime.pdb
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.Google.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\obj\Debug\DSS-CIO.csprojResolveAssemblyReference.cache
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\obj\Debug\DSS-CIO.dll
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\obj\Debug\DSS-CIO.pdb

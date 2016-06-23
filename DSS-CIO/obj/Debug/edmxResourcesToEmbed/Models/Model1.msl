@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DSS_CIO3ModelStoreContainer" CdmEntityContainer="DSS_CIO2Entities">
+    <EntitySetMapping Name="Certifications">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.Certification">
+        <MappingFragment StoreEntitySet="Certification">
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="CertificationID" ColumnName="CertificationID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="CompletionStatus" ColumnName="CompletionStatus" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="ApplicationStatus" ColumnName="ApplicationStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ComplaintEmployeeAssignments">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.ComplaintEmployeeAssignment">
+        <MappingFragment StoreEntitySet="ComplaintEmployeeAssignment">
+          <ScalarProperty Name="ComplaintAssignmentID" ColumnName="ComplaintAssignmentID" />
+          <ScalarProperty Name="ComplaintID" ColumnName="ComplaintID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AssignmentDate" ColumnName="AssignmentDate" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="ResolutionDate" ColumnName="ResolutionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Complaints">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.Complaint">
+        <MappingFragment StoreEntitySet="Complaints">
+          <ScalarProperty Name="ComplaintID" ColumnName="ComplaintID" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="MilestoneID" ColumnName="MilestoneID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Severity" ColumnName="Severity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerCNIC" ColumnName="CustomerCNIC" />
+          <ScalarProperty Name="CustomerFullName" ColumnName="CustomerFullName" />
+          <ScalarProperty Name="DateofBirth" ColumnName="DateofBirth" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Organization" ColumnName="Organization" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerProjectMappings">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.CustomerProjectMapping">
+        <MappingFragment StoreEntitySet="CustomerProjectMapping">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="SatisfactionLevel" ColumnName="SatisfactionLevel" />
+          <ScalarProperty Name="CustomerProjectId" ColumnName="CustomerProjectId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deliverables">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.Deliverable">
+        <MappingFragment StoreEntitySet="Deliverable">
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AssignedBy" ColumnName="AssignedBy" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="ReviewedBy" ColumnName="ReviewedBy" />
+          <ScalarProperty Name="MilestoneID" ColumnName="MilestoneID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.Department">
+        <MappingFragment StoreEntitySet="Department">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DepartmentHead" ColumnName="DepartmentHead" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Educations">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.Education">
+        <MappingFragment StoreEntitySet="Education">
+          <ScalarProperty Name="EducationID" ColumnName="EducationID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+          <ScalarProperty Name="DegreeType" ColumnName="DegreeType" />
+          <ScalarProperty Name="Board_University" ColumnName="Board_University" />
+          <ScalarProperty Name="CGPA_Percentage" ColumnName="CGPA_Percentage" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="CompletionStatus" ColumnName="CompletionStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeePerformances">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.EmployeePerformance">
+        <MappingFragment StoreEntitySet="EmployeePerformance">
+          <ScalarProperty Name="EmployeePerformanceID" ColumnName="EmployeePerformanceID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="PerformanceGrade" ColumnName="PerformanceGrade" />
+          <ScalarProperty Name="EfficiencyGrade" ColumnName="EfficiencyGrade" />
+          <ScalarProperty Name="SkillDomain" ColumnName="SkillDomain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeResourceAssignments">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.EmployeeResourceAssignment">
+        <MappingFragment StoreEntitySet="EmployeeResourceAssignment">
+          <ScalarProperty Name="EmployeeResourceID" ColumnName="EmployeeResourceID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AssignmentDate" ColumnName="AssignmentDate" />
+          <ScalarProperty Name="ExpectedReturnDate" ColumnName="ExpectedReturnDate" />
+          <ScalarProperty Name="ActualReturnDate" ColumnName="ActualReturnDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeTaskAssignments">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.EmployeeTaskAssignment">
+        <MappingFragment StoreEntitySet="EmployeeTaskAssignment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="AssignmentDate" ColumnName="AssignmentDate" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="SubmissionDate" ColumnName="SubmissionDate" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="TaskCategory" ColumnName="TaskCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FinanceTransactions">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.FinanceTransaction">
+        <MappingFragment StoreEntitySet="FinanceTransactions">
+          <ScalarProperty Name="FinanceTransactionID" ColumnName="FinanceTransactionID" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="IdentificationDocumentNumber" ColumnName="IdentificationDocumentNumber" />
+          <ScalarProperty Name="IdentificationDocumentType" ColumnName="IdentificationDocumentType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="SenderIdentification" ColumnName="SenderIdentification" />
+          <ScalarProperty Name="ReceiverIdentification" ColumnName="ReceiverIdentification" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="ProjectFinanceID" ColumnName="ProjectFinanceID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Healths">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.Health">
+        <MappingFragment StoreEntitySet="Health">
+          <ScalarProperty Name="HealthID" ColumnName="HealthID" />
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+          <ScalarProperty Name="BMI" ColumnName="BMI" />
+          <ScalarProperty Name="EyeSight" ColumnName="EyeSight" />
+          <ScalarProperty Name="Allergy" ColumnName="Allergy" />
+          <ScalarProperty Name="Disease" ColumnName="Disease" />
+          <ScalarProperty Name="OtherHealthIssue" ColumnName="OtherHealthIssue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InanimateResources">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.InanimateResource">
+        <MappingFragment StoreEntitySet="InanimateResource">
+          <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="Make" ColumnName="Make" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Condition" ColumnName="Condition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobDescriptions">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.JobDescription">
+        <MappingFragment StoreEntitySet="JobDescription">
+          <ScalarProperty Name="JobDescriptionID" ColumnName="JobDescriptionID" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KNNDatas">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.KNNData">
+        <MappingFragment StoreEntitySet="KNNData">
+          <ScalarProperty Name="Skill" ColumnName="Skill" />
+          <ScalarProperty Name="Disease" ColumnName="Disease" />
+          <ScalarProperty Name="Allergy" ColumnName="Allergy" />
+          <ScalarProperty Name="Eyesight" ColumnName="Eyesight" />
+          <ScalarProperty Name="BMI" ColumnName="BMI" />
+          <ScalarProperty Name="CertificationGrade" ColumnName="CertificationGrade" />
+          <ScalarProperty Name="CertificationName" ColumnName="CertificationName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="DegreeName" ColumnName="DegreeName" />
+          <ScalarProperty Name="DegreeType" ColumnName="DegreeType" />
+          <ScalarProperty Name="BoardUniversity" ColumnName="BoardUniversity" />
+          <ScalarProperty Name="CGPA_Percentage" ColumnName="CGPA_Percentage" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Milestones">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.Milestone">
+        <MappingFragment StoreEntitySet="Milestone">
+          <ScalarProperty Name="MilestoneID" ColumnName="MilestoneID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TotalDeliverables" ColumnName="TotalDeliverables" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="AssignmentDate" ColumnName="AssignmentDate" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="ActualSubmissionDate" ColumnName="ActualSubmissionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.Person">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="FName" ColumnName="FName" />
+          <ScalarProperty Name="LName" ColumnName="LName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+          <ScalarProperty Name="JobDescriptionID" ColumnName="JobDescriptionID" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="AddressLine" ColumnName="AddressLine" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Allowances" ColumnName="Allowances" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonRelationshipAssignments">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.PersonRelationshipAssignment">
+        <MappingFragment StoreEntitySet="PersonRelationshipAssignment">
+          <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+          <ScalarProperty Name="Person1ID" ColumnName="Person1ID" />
+          <ScalarProperty Name="Person2ID" ColumnName="Person2ID" />
+          <ScalarProperty Name="Relationship2" ColumnName="Relationship2" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PeopleCount" ColumnName="PeopleCount" />
+          <ScalarProperty Name="LaunchDate" ColumnName="LaunchDate" />
+          <ScalarProperty Name="EcpectedEndDate" ColumnName="EcpectedEndDate" />
+          <ScalarProperty Name="ActualEndDate" ColumnName="ActualEndDate" />
+          <ScalarProperty Name="CompletionPercentage" ColumnName="CompletionPercentage" />
+          <ScalarProperty Name="TotalMilestones" ColumnName="TotalMilestones" />
+          <ScalarProperty Name="ProjectStatus" ColumnName="ProjectStatus" />
+          <ScalarProperty Name="ProjectFinanceID" ColumnName="ProjectFinanceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectEmployeeAssignments">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.ProjectEmployeeAssignment">
+        <MappingFragment StoreEntitySet="ProjectEmployeeAssignment">
+          <ScalarProperty Name="ProjectEmployeeID" ColumnName="ProjectEmployeeID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+          <ScalarProperty Name="Performance" ColumnName="Performance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectFinances">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.ProjectFinance">
+        <MappingFragment StoreEntitySet="ProjectFinance">
+          <ScalarProperty Name="ProjectFinanceID" ColumnName="ProjectFinanceID" />
+          <ScalarProperty Name="ProjectBidPrice" ColumnName="ProjectBidPrice" />
+          <ScalarProperty Name="ProjectEstimatedCost" ColumnName="ProjectEstimatedCost" />
+          <ScalarProperty Name="ProjectResourcesAmount" ColumnName="ProjectResourcesAmount" />
+          <ScalarProperty Name="ProjectPaymentDeadline" ColumnName="ProjectPaymentDeadline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectResourceAssignments">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.ProjectResourceAssignment">
+        <MappingFragment StoreEntitySet="ProjectResourceAssignment">
+          <ScalarProperty Name="ProjectResourceID" ColumnName="ProjectResourceID" />
+          <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+          <ScalarProperty Name="ResourceID" ColumnName="ResourceID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="AssignmentDate" ColumnName="AssignmentDate" />
+          <ScalarProperty Name="ExpectedReturnDate" ColumnName="ExpectedReturnDate" />
+          <ScalarProperty Name="ActualReturnDate" ColumnName="ActualReturnDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="DSS_CIO3Model.Store.func_Split" FunctionImportName="func_Split">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DSS_CIO3Model.func_Split_Result">
+          <ScalarProperty Name="ElementID" ColumnName="ElementID" />
+          <ScalarProperty Name="Element" ColumnName="Element" />
+          <ScalarProperty Name="Element2" ColumnName="Element2" />
+          <ScalarProperty Name="Element3" ColumnName="Element3" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="KNNALGORITHM" FunctionName="DSS_CIO3Model.Store.KNNALGORITHM" />
+    <FunctionImportMapping FunctionImportName="KNNALGORITHMSKILL" FunctionName="DSS_CIO3Model.Store.KNNALGORITHMSKILL" />
+    <EntitySetMapping Name="SkillPredictions">
+      <EntityTypeMapping TypeName="DSS_CIO3Model.SkillPrediction">
+        <MappingFragment StoreEntitySet="SkillPrediction">
+          <ScalarProperty Name="Efficiency" ColumnName="Efficiency" />
+          <ScalarProperty Name="Performance" ColumnName="Performance" />
+          <ScalarProperty Name="Skill" ColumnName="Skill" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
