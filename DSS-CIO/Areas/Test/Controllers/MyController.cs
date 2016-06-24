@@ -235,11 +235,11 @@ namespace DSS_CIO.Areas.Test.Controllers
             //{
             //    model.data.Add(new string[] { item.FName + " " + item.LName, item.City, "<a href='/Test/My/EmployeeDetail/" + item.CNIC.Trim() + "?candidate=yes'><i class='fa fa-eye'></i></a>" });
             //}
-            model.data.Add(new string[] { "JAN - 2016", "45000" });
-            model.data.Add(new string[] { "FEB - 2016", "50000" });
-            model.data.Add(new string[] { "MAR - 2016", "45000" });
-            model.data.Add(new string[] { "APRIL - 2016", "50000" });
-            model.data.Add(new string[] { "MAY - 2016", "45000" }); 
+            model.data.Add(new string[] { "JAN - 2016", "45000","" });
+            model.data.Add(new string[] { "FEB - 2016", "50000","" });
+            model.data.Add(new string[] { "MAR - 2016", "45000" ,""});
+            model.data.Add(new string[] { "APRIL - 2016", "50000","" });
+            model.data.Add(new string[] { "MAY - 2016", "45000","" }); 
             return Json(model, JsonRequestBehavior.AllowGet);
 
         }
