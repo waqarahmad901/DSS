@@ -3752,6 +3752,7 @@
     <Content Include="Areas\Test\vendors\validator\README.md" />
     <Content Include="Areas\Test\vendors\validator\validator.jquery.json" />
     <Content Include="Areas\Test\js\maps\us-unemployment.json" />
+    <Content Include="Areas\Test\Views\My\_Accounts.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

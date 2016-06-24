@@ -41,6 +41,9 @@
                                 <li role="presentation" class="">
                                     <a href="#tab_content5" role="tab" id="candidate-tab" data-toggle="tab" aria-expanded="false">Payroll</a>
                                 </li>
+                                <li role="presentation" class="">
+                                    <a href="#tab_content6" role="tab" id="accounts-tab" data-toggle="tab" aria-expanded="false">Accounts</a>
+                                </li>
                             </ul>
                             <div id="myTabContent" class="tab-content">
                                 <div role="tabpanel" class="tab-pane fade active in" id="tab_content0" aria-labelledby="alert-tab">
@@ -64,6 +67,9 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="tab_content5" aria-labelledby="candidate-tab">
                                     @{ Html.RenderPartial("_Candidate", Model);  }
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content6" aria-labelledby="accounts-tab">
+                                    @{ Html.RenderPartial("_Accounts", Model);  }
                                 </div>
                             </div>
                         </div>
