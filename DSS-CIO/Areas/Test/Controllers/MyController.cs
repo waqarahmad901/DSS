@@ -235,11 +235,29 @@ namespace DSS_CIO.Areas.Test.Controllers
             //{
             //    model.data.Add(new string[] { item.FName + " " + item.LName, item.City, "<a href='/Test/My/EmployeeDetail/" + item.CNIC.Trim() + "?candidate=yes'><i class='fa fa-eye'></i></a>" });
             //}
-            model.data.Add(new string[] { "JAN - 2016", "45000","" });
-            model.data.Add(new string[] { "FEB - 2016", "50000","" });
-            model.data.Add(new string[] { "MAR - 2016", "45000" ,""});
-            model.data.Add(new string[] { "APRIL - 2016", "50000","" });
-            model.data.Add(new string[] { "MAY - 2016", "45000","" }); 
+            model.data.Add(new string[] { "JAN - 2016", "45000", "<a href='/Test/My/EmployeeDetail ?candidate=yes'><i class='fa fa-eye'></i></a>" });
+            model.data.Add(new string[] { "FEB - 2016", "50000","<a href='/Test/My/EmployeeDetail ?candidate=yes'><i class='fa fa-eye'></i></a>"});
+            model.data.Add(new string[] { "MAR - 2016", "45000" , "<a href='/Test/My/EmployeeDetail ?candidate=yes'><i class='fa fa-eye'></i></a>" });
+            model.data.Add(new string[] { "APRIL - 2016", "50000", "<a href='/Test/My/EmployeeDetail ?candidate=yes'><i class='fa fa-eye'></i></a>" });
+            model.data.Add(new string[] { "MAY - 2016", "45000", "<a href='/Test/My/EmployeeDetail ?candidate=yes'><i class='fa fa-eye'></i></a>" }); 
+            return Json(model, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public ActionResult GetAccountsList()
+        {
+            datatableModel model = new datatableModel();
+            model.data = new List<string[]>();
+
+            DataProvider provider = new DataProvider();
+            var list = provider.GetPersonList("Candidate");
+            //foreach (var item in list)
+            //{
+            //    model.data.Add(new string[] { item.FName + " " + item.LName, item.City, "<a href='/Test/My/EmployeeDetail/" + item.CNIC.Trim() + "?candidate=yes'><i class='fa fa-eye'></i></a>" });
+            //}
+            model.data.Add(new string[] { "Patrol", "45000", "<a href='/Test/My/EmployeeDetail ?candidate=yes'><i class='fa fa-eye'></i></a>" });
+            model.data.Add(new string[] { "Parking Maintinace", "600000", "<a href='/Test/My/EmployeeDetail ?candidate=yes'><i class='fa fa-eye'></i></a>" });
+            model.data.Add(new string[] { "Others", "20000", "<a href='/Test/My/EmployeeDetail ?candidate=yes'><i class='fa fa-eye'></i></a>" });
             return Json(model, JsonRequestBehavior.AllowGet);
 
         }
