@@ -3,6 +3,16 @@
 
  
 
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+
+        <div class="x_content">
+            <div id="payroll" style="height:250px;"></div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
 
 
 <div class="row">
@@ -40,8 +50,50 @@
                 });
             }
 
- 
 
+
+        });
+
+        var payroll = echarts.init(document.getElementById('payroll'), theme);
+
+        finiance.setOption({
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                x: 'center',
+                y: 'bottom',
+                data: ['JAN - 2016', 'FEB - 2016', 'MAR - 2016', 'APRIL - 2016', 'MAY - 2016']
+            },
+
+            calculable: true,
+            series: [{
+                name: 'Payroll',
+                type: 'pie',
+                radius: '55%',
+                center: ['50%', '48%'],
+                data: [{
+                    value: 45000,
+                    name: 'JAN - 2016'
+                } ,{
+                    value: 50000,
+                    name: 'FEB - 2016'
+                } ,{
+                    value: 40000,
+                    name: 'JAN - 2016'
+                } ,{
+                    value:45000,
+                    name: 'MAR - 2016'
+                } ,{
+                    value: 50000,
+                    name: 'APRIL - 2016'
+                } ,{
+                    value: 40000,
+                    name: 'MAY - 2016'
+                } 
+                ]
+            }]
         });
     });
 
