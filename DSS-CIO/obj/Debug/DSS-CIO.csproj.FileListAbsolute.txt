@@ -160,6 +160,6 @@ F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.OAuth.xml
 F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.Google.xml
 F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.Twitter.xml
 F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\obj\Debug\DSS-CIO.csprojResolveAssemblyReference.cache
 F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\obj\Debug\DSS-CIO.dll
 F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\obj\Debug\DSS-CIO.pdb
+F:\Clients\Imran Elixir ref\DSS2\DSS-CIO\obj\Debug\DSS-CIO.csprojResolveAssemblyReference.cache

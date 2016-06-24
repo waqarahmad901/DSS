@@ -1,1 +1,102 @@
 ﻿
+@model DSSCIO.Areas.Test.Models.ProjectModel
+
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+
+        <div class="x_content">
+            <div id="accounts" style="height:250px;"></div>
+        </div>
+    </div>
+</div>
+
+<div class="clearfix"></div>
+
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+
+            <div class="x_content">
+                <table id="datatable212" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+
+
+                            <th>City</th>
+
+                            <th>Detail</th>
+                        </tr>
+                    </thead>
+
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#candidate-tab').on('shown.bs.tab', function () {
+            if (!$.fn.DataTable.isDataTable('#datatable212')) {
+                $('#datatable22').dataTable({
+                    "ajax": "@Url.Action("GetCandidateList", "My")"
+                });
+            }
+
+
+
+
+
+            var accounts = echarts.init(document.getElementById('payroll'), theme);
+
+            accounts.setOption({
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                x: 'center',
+                y: 'bottom',
+                data: ['JAN - 2016', 'FEB - 2016', 'MAR - 2016', 'APRIL - 2016', 'MAY - 2016']
+            },
+
+            calculable: true,
+            series: [{
+                name: 'Payroll',
+                type: 'pie',
+                radius: '55%',
+                center: ['50%', '48%'],
+                data: [{
+                    value: 45000,
+                    name: 'JAN - 2016'
+                } ,{
+                    value: 50000,
+                    name: 'FEB - 2016'
+                } ,{
+                    value: 40000,
+                    name: 'JAN - 2016'
+                } ,{
+                    value:45000,
+                    name: 'MAR - 2016'
+                } ,{
+                    value: 50000,
+                    name: 'APRIL - 2016'
+                } ,{
+                    value: 40000,
+                    name: 'MAY - 2016'
+                }
+                ]
+            }]
+        });
+        });
+    });
+
+</script>
+
