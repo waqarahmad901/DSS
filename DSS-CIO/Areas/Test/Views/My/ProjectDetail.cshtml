@@ -154,12 +154,61 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Expences in project</h2>
+                     <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table id="datatable31" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+
+                            </tr>
+                        </thead>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Finace in project</h2>
+                     <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <table id="datatable32" class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                
+                            </tr>
+                        </thead>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
 <script type="text/javascript">
     $(document).ready(function () {
-       
+
         $('#datatable1').dataTable({
             "ajax": "@Url.Action("GetEmployeeWorkingProjects", "My",new {@id = @Model.ProjectId })"
         });
@@ -168,6 +217,12 @@
         });
         $('#datatable3').dataTable({
             "ajax": "@Url.Action("GetResourcesInProjects", "My" ,  new { @id = @Model.ProjectId })"
+        });
+        $('#datatable31').dataTable({
+            "ajax": "@Url.Action("GetExpenceInProjects1", "My" ,  new { @id = @Model.ProjectId })"
+        });
+        $('#datatable32').dataTable({
+            "ajax": "@Url.Action("GetFiniaceInProjects", "My" ,  new { @id = @Model.ProjectId })"
         });
     });
     </script>

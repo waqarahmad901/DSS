@@ -357,6 +357,54 @@ namespace DSS_CIO.Areas.Test.Controllers
 
             return Json(model, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult GetExpenceInProjects(string id)
+        {
+            datatableModel model = new datatableModel();
+            model.data = new List<string[]>();
+
+            DataProvider provider = new DataProvider();
+            var list = provider.GetResourcesByEmployeeId(id);
+             
+            model.data.Add(new string[] { "Expence 1", "25,000", "26- JAN- 2016"});
+            model.data.Add(new string[] { "Expence 2", "24,000", "26- FEB- 2016"});
+            model.data.Add(new string[] { "Expence 3", "26,000", "27- MAR- 2016"});
+            model.data.Add(new string[] { "Expence 4", "30,000", "31 - MAY- 2016" });
+           
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetExpenceInProjects1(string id)
+        {
+            datatableModel model = new datatableModel();
+            model.data = new List<string[]>();
+
+            DataProvider provider = new DataProvider();
+            var list = provider.GetResourcesByEmployeeId(id);
+
+            model.data.Add(new string[] { "Expence 1", "25,000", "26- JAN- 2016" });
+            model.data.Add(new string[] { "Expence 2", "24,000", "26- FEB- 2016" });
+            model.data.Add(new string[] { "Expence 3", "26,000", "27- MAR- 2016" });
+            model.data.Add(new string[] { "Expence 4", "30,000", "31 - MAY- 2016" });
+
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetFiniaceInProjects(string id)
+        {
+            datatableModel model = new datatableModel();
+            model.data = new List<string[]>();
+
+            DataProvider provider = new DataProvider();
+            var list = provider.GetResourcesByEmployeeId(id);
+
+            model.data.Add(new string[] { "Finiace 1", "25,000", "26- JAN- 2016" });
+            model.data.Add(new string[] { "Finiace 2", "24,000", "26- FEB- 2016" });
+            model.data.Add(new string[] { "Finiace 3", "26,000", "27- MAR- 2016" });
+            model.data.Add(new string[] { "Finiace 4", "30,000", "31 - MAY- 2016" });
+
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
         public ActionResult GetCertificationByEmployeeId(string id)
         {
             datatableModel model = new datatableModel();
